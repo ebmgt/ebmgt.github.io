@@ -7,24 +7,60 @@
 	<meta name="keywords" content="" />
 	<meta name="robots" content="index,follow" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <H1>NHS Staff Surveys studies<H1>
+<div class="row">
+	<div class="column">
+	<h2>Local copies and derivitives of source files</h2>
+	<ul>
+		<li><a href="https://github.com/ebmgt/ebmgt.github.io/tree/master/nhs">Source files<a/></li>
+	</ul>
 
-<h2>Local copies of source files</h2>
-<ul>
-	<li><a href="https://github.com/ebmgt/ebmgt.github.io/tree/master/nhs">Source files<a/></li>
-</ul>
+	<h2>Source files at original websites</h2>
+	<ul>
+		<li><a href="https://digital.nhs.uk/data-and-information/publications/clinical-indicators/shmi/">Mortality data at digital.nhs.uk<a/></li>
+		<li><a href="https://www.nhsstaffsurveys.com/Page/1021/Past-Results/Historical-Staff-Survey-Results/">Staff Surveys results at www.nhsstaffsurveys.com<a/></li>
+	</ul>
+	</div>
+	<div class="column">
+		
+	</div>
+	</div> 
 
-<h2>Original files at original websites</h2>
-<ul>
-	<li><a href="https://digital.nhs.uk/data-and-information/publications/clinical-indicators/shmi/">Mortality data at digital.nhs.uk<a/></li>
-	<li><a href="https://www.nhsstaffsurveys.com/Page/1021/Past-Results/Historical-Staff-Survey-Results/">Staff Surveys results at www.nhsstaffsurveys.com<a/></li>
-</ul>
-
+<!-- footer -->
+<div>
 <a href="https://github.com/ebmgt/ebmgt.github.io/blob/master/nhs/index.html">Edit this page</a>
+</div>
 
 </body>
 </html>
