@@ -8,29 +8,16 @@
 	<meta name="robots" content="index,follow" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
+  .flex-container {   
+    flex-direction: row;
   }
 }
 </style>
@@ -39,7 +26,7 @@
 <body>
 
 <h1>NHS Staff Surveys studies</h1>
-<div class="row">
+<div class="flex-container">
 	<div class="column">
 	<h2>Local copies and derivitives of source files</h2>
 	<ul>
@@ -57,7 +44,7 @@
 	<div class="column">
 		<h2>Analytic plan</h2>
 		<div><a href="https://raw.githubusercontent.com/ebmgt/ebmgt.github.io/master/nhs/analysis/analysis-overview.png" target=_blank>View full-sized diagram in new window</a></div>
-		<img src="https://raw.githubusercontent.com/ebmgt/ebmgt.github.io/master/nhs/analysis/analysis-overview.png" style="width: 90%; max-width: 800px;" alt="Analytic plan"/>
+		<img src="https://raw.githubusercontent.com/ebmgt/ebmgt.github.io/master/nhs/analysis/analysis-overview.png" style="width: 400px; max-width: 800px;" alt="Analytic plan"/>
 	</div>
 	</div> 
 <!-- End of two columns -->	
