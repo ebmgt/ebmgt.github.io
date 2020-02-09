@@ -7,18 +7,56 @@
 	<meta name="keywords" content="" />
 	<meta name="robots" content="index,follow" />
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
 </head>
 
 <body>
-
 <h1>Evidence-based Management in healthcare</h1>
-	<div>Original research to inform management practices</div>	
-<ul>
-	<li><a href="nhs">NHS Staff Surveys studies</a> (in process)</li>
-	<li><a href="specificgoals">Creating specific clinical goals based on published typical and best practice</a> (in process)</li>
-	<li>Badgett R, Chen J, May DR, Field T, Greiner KA. Can the Federal Baldrige Survey Measure Workforce Well-being in an Academic Health Center? Kans J Med. 2019 Feb 26;12(1):4-6. eCollection 2019 Feb. PMID:<a href="http://pubmed.gov/30854161">30854161</a>; PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6396958/">PMC6396958</a></li>
-</ul>
+<div>Original research to inform management practices</div>	
 
+<div class="row">
+  <div class="column" style="background-color:white">
+<ul>
+	<li><a href="nhs">NHS Staff Surveys studies</a>. Does staff engagement relate to adjusted hospital mortality?</li>
+	<li><a href="nhs.religion">NHS Staff Surveys studies</a>. Does staff religious affiliation affect self-reported burnout? Is harassment a modulator?</li>
+	<li><a href="specific.goals">Creating specific clinical goals based on published typical and best practice</a> (in process)</li>
+	<li>Can the Federal Baldrige Survey Measure Workforce Well-being in an Academic Health Center? Kans J Med. 2019 Feb 26;12(1):4-6. eCollection 2019 Feb. PMID:<a href="http://pubmed.gov/30854161">30854161</a>; PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6396958/">PMC6396958</a></li>
+</ul>
+</div>
+  <div class="column" style="background-color:white;">
+  <img src="http://sumsearch.org/images/kansas/2012-08-05%20-%20Tallgrass%20Prairie%20067%20-%20cropped.jpg" style="width:80%"/>
+  </div>
+</div>
+	
+
+<div id="footer" style="text-align: center;">
 <a href="https://github.com/ebmgt/ebmgt.github.io/blob/master/index.html">Edit this page</a>
 
 <script type="text/javascript">
@@ -31,6 +69,7 @@
       pageTracker._trackPageview();
    } catch(err) {}
 </script>
+</div>
 <div id="tip" style="display:none"></div>
 </body>
 </html>
