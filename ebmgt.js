@@ -44,7 +44,6 @@ $(document).ready(function(){
   } else {
     $("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
   }
-alert('here2: ' + lastmod);
   //Event handlers
   $('#tip').mouseleave(function(event){
     $( "#tip" ).css('display', 'none');
