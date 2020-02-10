@@ -58,14 +58,19 @@
   </div>
 </div>
 
-<footer>
 <p>This project is maintained by <a href="https://ebmgt.github.io/">ebmgt.github.io/</a></p>
 	<div>&nbsp;</div>
 	<div>&nbsp;</div>
 	<div>&nbsp;</div>
 	<div>&nbsp;</div>
-<div id="business"></div>
-</footer>
+
+<script>
+//For gh-pages
+//Page history and edit
+var pagename = location.pathname.split('/').slice(-1);
+if (pagename.toString().length < 1){pagename = "index.html"}
+document.write("<div style='text-align:center'><a href='https://github.com/ebmgt/ebmgt.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/ebmgt/ebmgt.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+</script>
 
 <script type="text/javascript">
    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
