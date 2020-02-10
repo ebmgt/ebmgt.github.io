@@ -34,6 +34,7 @@ $(document).ready(function(){
   //write footer business
   //write to div business in the footer
   //Resuse
+alert('here1');
   $("#business").append("<div style='text-align:center'><a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/files/LICENSE.md\">License</a></div>")
   //Edit and issues/comments
   $("#business").append("<div style='text-align:center'><a href='https://github.com/" + sub_domain + '/' + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/issues?q=is%3Aboth+is%3Aissue'>Issues and comments</a></div>")
@@ -45,6 +46,7 @@ $(document).ready(function(){
   } else {
     $("#business").append("<div style='text-align:center'>Updated: " + lastmod + " - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/commits/gh-pages/" + pagename + "'>History</a></div>")
   }
+alert('here2: ' + lastmod);
   //Event handlers
   $('#tip').mouseleave(function(event){
     $( "#tip" ).css('display', 'none');
