@@ -1,3 +1,4 @@
+debugger;
 var n = location.pathname.indexOf("/",1);
 var sub_domain = location.hostname.split('.').shift();
 if (n == 0){n = location.pathname.length};
