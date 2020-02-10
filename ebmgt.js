@@ -9,7 +9,7 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 var metagression = false;
 var network = false;
 var r_code = false;
-
+alert('00');
 function showtip(tiptext, trigger, width){
 	$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
@@ -30,6 +30,7 @@ function showtip(tiptext, trigger, width){
 		}
         $("#tip").offset({top: pos_top, left: pos_left});
 }  
+alert('01');
 $(document).ready(function(){
   //write footer business
   //write to div business in the footer
