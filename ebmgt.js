@@ -9,7 +9,6 @@ var repo_name = repo_dir.replace(/\-/gi, ' ');
 var metagression = false;
 var network = false;
 var r_code = false;
-alert('00');
 function showtip(tiptext, trigger, width){
 	$("#tip").css('display','block');
         $("#tip").html("<div style = 'background-color:white;opacity:1;border-style: solid; border-width: medium;padding:10px'>" + tiptext + '</div>');
@@ -30,12 +29,10 @@ function showtip(tiptext, trigger, width){
 		}
         $("#tip").offset({top: pos_top, left: pos_left});
 }  
-alert('01');
 $(document).ready(function(){
   //write footer business
   //write to div business in the footer
   //Resuse
-alert('here1');
   $("#business").append("<div style='text-align:center'><a href=\"https://github.com/" + sub_domain + '/' + repo_dir + "/tree/master/files/LICENSE.md\">License</a></div>")
   //Edit and issues/comments
   $("#business").append("<div style='text-align:center'><a href='https://github.com/" + sub_domain + '/' + repo_dir + "/blob/gh-pages/" + pagename + "'>Edit this page</a> - <a href='https://github.com/" + sub_domain + '/' + repo_dir + "/issues?q=is%3Aboth+is%3Aissue'>Issues and comments</a></div>")
