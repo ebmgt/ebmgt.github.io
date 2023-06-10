@@ -5,18 +5,495 @@
 <meta http-equiv="content-Type" content="text/html; charset=iso-8859-1">
 <meta name="Author" content="Bob Badgett">
 <meta name="Version" content="1">
-<meta name="Date" content="08/16/2000 1:06PM">
+<meta name="Date" content="06/10/2023 1:00PM">
 <meta charset="UTF-8">
-</head>
-<body>
-<p>This document was last modified:</p>
-<p id="modified.date"></p>
+<!-- jquery -->
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+  crossorigin="anonymous"></script>
+<!-- tooltip -->
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" />
+<script type="text/javascript">
+// Create the tooltips only when document ready
+$(document).ready(function () {
 
-<script>
-let text = document.lastModified;
-document.getElementById("modified.date").innerHTML = text;
+	document.getElementById("modified.date").innerHTML = document.lastModified;
+
+	var hash = window.location.hash 
+    
+	//https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
+	// Apply tooltip on all <a/> elements with title attributes. Mousing over
+    // these elements will the show tooltip as expected, but mousing onto the
+    // tooltip is now possible for interaction with it's contents.
+    //$('a').each(function () {
+    $('.hastip').each(function () {
+        $(this).qtip({
+            content: $(this).next('.tooltiptext'),
+            hide: {
+                fixed: true,
+                delay: 300
+            },
+			position: {
+				my: 'top left',  // Position my top left...
+				at: 'bottom left', // at the bottom right of...
+			},
+			style: { classes: 'ToolTipClass'
+			}
+		});
+    });
+
+	$('.hastip').click(function(e) {
+		e.stopPropagation();
+		return false;
+	});	
+	
+});
+
+var DivName = "tips";
+function toggle(itemno)
+	{
+	document.getElementById(itemno).style.display = (document.getElementById(itemno).style.display == "none" ) ? "" : "none";
+	}
+
 </script>
+<style type="text/css">
+body {
+    padding: 50px;
+}
+h1,h2,h3 {color:#0022B4}
+.tooltiptext{
+    display: none;
+}
 
+.ToolTipClass{
+	color:black;
+    border-color:#0022B4;
+    background-color: lightgreen;
+	font-size: 14px;
+}
+.highlight
+{
+background-color:#FFC82D;
+}
+/* For large table of well-being*/
+tr, th{text-align:center}
+
+</style>
+
+</head>
+<body bgcolor="white" style="margin:0px">
+<div style=" position: relative; float: right;">This document was last modified: <span id="modified.date"/></div>
+<h1>Surveys of workforce well-being and antecedents</h1>
+<h2>States of well-being</h2>
+<h3>Table 1: key, validated states and their availability on common surveys</h3>
+<div id="div.states">
+<!-- Table 1 start -->
+<table>
+<tr>
+	<th style="width:125px;text-align:left">State</th><th style="width:125px"><a href="https://www.aamc.org/services/member-capacity-building/standpoint-surveys/faculty-engagement-survey" target=_blank>AAMC</a></th>
+	<th style="width:125px"><a href="https://www.ahrq.gov/sops/" target=_blank>AHRQ SOPS</a></th>
+	<th style="width:125px"><a href="https://edhub.ama-assn.org/steps-forward/pages/professional-well-being" target=_blank>AMA<br/>(Mini-Z)</a></th>
+	<th style="width:125px"><a href="https://www.apa.org/news/press/releases/2014/04/employee-distrust" target=_blank>APA 2014</a></th>
+	<th style="width:125px"><a href="https://www.gallup.com/workplace/356063/gallup-q12-employee-engagement-survey.aspx" target=_blank>Gallop Q12</a></th>
+	<th style="width:125px"><a href="https://gss.norc.org/Pages/quality-of-worklife.aspx" target=_blank>GSS</a></th>
+	<th style="width:125px"><a href="https://www.mywellbeingindex.org/" target=_blank>Mayo Well-being Index (WBI)</a></th>
+	<th style="width:125px"><a href="https://www.nhsstaffsurveys.com/results/interactive-results/" target=_blank>NHS</a></th>
+	<th style="width:125px"><a href="https://www.cdc.gov/niosh/docs/2021-110/" target=_blank>NIOSH WellBQ</a></th>
+	<th style="width:125px"><a href="https://wellmd.stanford.edu/wellbeing-toolkit/howwemeasurewell-being.html" target=_blank>Stanford Professional Fulfillment Index (PFI)</a></th>
+</tr>
+<tr>
+	<td style="width:125px"></td>
+	<td style="width:125px"></td>
+	<td style="width:125px">Federal: mostly Public Domain<br/>(<a href="https://info.ahrq.gov/?page=15">details</a>)</td>
+	<td style="width:125px">Copyrighted (<a href="https://www.ama-assn.org/about/terms-use">details</a>)</td>
+	<td style="width:125px"></td>
+	<td style="width:125px"></td>
+	<td style="width:125px">Copyrighted<br/>(<a href="https://gss.norc.org/terms-and-conditions">reuse details</a>)</td>
+	<td style="width:125px"></td>
+	<td style="width:125px">Copyrighted<br/>
+	<a href="#tip" class="hastip">Noncommerical use details</a>
+	<div class="tooltiptext"><div style="text-align:center;font-size:large">Copyrighted</div>
+	<div>06/10/2023: "The questionnaire developed for NHS Staff Survey, or any subset of questions from the questionnaire, may be used only with express permission of NHS England. This permission will usually be granted, provided that:<br/>
+	a) The source is quoted; and<br/>b) The questions are not used for commercial benefit<br/>
+	Anyone wishing to use the NHS Staff Survey questionnaire for purposes other than the delivery of the national NHS Staff Survey should contact the Survey Coordination Centre at <a href="mailto::nhsstaffsurvey@surveycoordination.com</a>."</div>(<a href="https://www.nhsstaffsurveys.com/faqs/">Source</a>)
+</div></td>
+	<td style="width:125px">Federal: mostly Public Domain<br/>(<a href="https://www.cdc.gov/other/agencymaterials.html">details</a>)</div></td>
+	<td style="width:125px">Copyright unclear<br/>
+	<a href="#tip" class="hastip">Details</a>
+	<div class="tooltiptext"><div style="text-align:center;font-weight:bold">Copyright unclear</div>
+	<li>Feb, 2018:<a href="https://creativecommons.org/licenses/by/4.0/">Copyleft: CC BY 4.0</a> (PMID <a href="http://pubmed.gov/29196982">29196982</a>, 2018)</li>
+	<li>June, 2023: Copyright per stanford.edu (<a href="https://wellmd.stanford.edu/wellbeing-toolkit/howwemeasurewell-being.html">website</a>)</li>
+	</div></td>
+</tr>
+<tr>
+	<td style="text-align:left;width:125px">Thriving<br/>(<a target=_blank title="Opens in new window" href="https://doi.org/10.1002/job.756" class="hastip">Porath, 2012</a>
+	<div class="tooltiptext"><div style="text-align:center;font-size:large">
+	Thriving
+	</div>
+	<br/>
+	I see myself continually improving<br/>
+	I continue to learn more as time goes by
+	</div>)</td><td><a href="#tip" class="hastip">
+	Indirect
+	</a>
+	<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+	Indirect
+	</div>
+	<ul>
+
+	<li>I am satisfied with the intellectual vitality in my department</li>
+	<li>I feel that the workplace culture at this medical school cultivates innovation</li><br/>
+	Anchors: 5</li>
+	</ul>
+
+	</div>
+	</td><td>No</td><td>No</td><td>No</td><td><a href="#tip" class="hastip">
+	Indirect
+	</a>
+	<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+	Indirect
+	</div>
+	<ul>
+
+	<li>This last year, I have had opportunities at work to learn and grow</li><br/>
+	Anchors: </li>
+	</ul>
+
+	</div>
+	</td><td>No</td><td>No</td><td><a href="#tip" class="hastip">
+	Indirect
+	</a>
+	<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+	Indirect
+	</div>
+	<ul>
+
+	<li>I have opportunities to improve my knowledge and skills</li>
+	<li>I am able to access the right learning and development opportunities when I need to.</li>
+	</ul>
+
+	</div>
+	</td><td>No</td><td>No</td>
+</tr>
+<tr><td style="text-align:left;width:125px">Engagement<br/>(<a target=_blank title="Opens in new window" href="https://doi.org/10.1027/1015-5759/a000430" class="hastip">Schaufeli, 2019</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large">
+Engagement
+</div>
+<br/>
+At my work, I feel bursting with energy (vigor)<br/>
+I am enthusiastic about my job (dedication)<br/>
+I am immersed in my work (absorption)<br/>
+</div>)</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>I feel personally driven to help this medical school succeed</li>
+</ul>
+
+</div>
+</td><td>No</td><td>No</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>When I get up in the morning, I feel like going to work</li>
+<li>I am enthusiastic about my job</li>
+<li>I am immersed in my work</li><br/>
+Anchors: 6</li>
+</ul>
+
+</div>
+</td><td>No</td><td>No</td><td>No</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>I look forward to going to work</li>
+<li>I am enthusiastic about my job</li>
+<li>Time passes quickly when I am working</li><br/>
+Anchors: 5</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>When I get up in the morning, I feel like going to work.</li><br/>
+Anchors: 7</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>Lacking in enthusiasm at work</li>
+</ul>
+
+</div>
+</td></tr><tr><td style="text-align:left;width:125px">Satisfaction</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>All things considered, how satisfied or dissatisfied are you with your medical school as a place to work?</li>
+<li>All things considered, how satisfied or dissatisfied are you with your department as a place to work?</li><br/>
+Anchors: </li>
+</ul>
+
+</div>
+</td><td>No</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>Overall, I am satisfied with my current job</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>All in all, I am satisfied with my job.</li>
+</ul>
+
+</div>
+</td><td>No</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>On the whole, how satisfied are you with the work you do</li>
+</ul>
+
+</div>
+</td><td>No</td><td>No</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>Overall, I am ____ with my job.</li><br/>
+Anchors: 4</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Yes
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Yes
+</div>
+<ul>
+
+<li>My work is satisfying to me</li>
+</ul>
+
+</div>
+</td></tr><tr><td style="text-align:left;width:125px">Burnout<br/>(<a target=_blank title="Opens in new window" href="https://doi.org/10.1002/job.4030020205">Maslach, 1981</a>)<br/>(<a target=_blank title="Opens in new window" href="https://[pubmed.gov/10135263">Schmoldt, 1994</a>)<br/>(<a href="https://nam.edu/valid-reliable-survey-instruments-measure-burnout-well-work-related-dimensions/">NAM list</a>)</td><td><a href="#tip" class="hastip">
+Mini-Z
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Mini-Z
+</div>
+<ul>
+
+<li>Using your own definition of "burnout" please select one of the answers below.</li>
+</ul>
+
+</div>
+</td><td>No</td><td><a href="#tip" class="hastip">
+Mini-Z
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Mini-Z
+</div>
+<ul>
+
+<li>Using your own definition of "burnout", please mark one of the answers below:</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>During my workday, I typically feel tense or</li>
+<li>stressed out</li>
+</ul>
+
+</div>
+</td><td>No</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>How often does respondent find work stressful</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>Have you felt burned out from you work?</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>How often, if at all, do you feel burnt out because of your work?</li><br/>
+Anchors: 5</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>How often do you experience fatigue when you are working?</li>
+</ul>
+
+</div>
+</td><td><a href="#tip" class="hastip">
+Indirect
+</a>
+<div class="tooltiptext"><div style="text-align:center;font-size:large;font-weight:bold">
+Indirect
+</div>
+<ul>
+
+<li>Physically exhausted at work</li>
+<li>Emotionally exhausted at work</li>
+<li>A sense of dread when I think about work I have to do</li>
+
+<li>Less empathetic with my patients</li>
+<li>Less empathetic with my colleagues</li>
+<li>Less sensitive to others' feelings/emotions</li>
+<li>*Less interested in talking with my patients</li>
+<li>Less connected with my patients</li>
+<li>Less connected with my colleagues</li>
+</ul>
+
+</div>
+</td></tr></table>
+</div>
+<!-- Table 1 stop -->
+
+<h3>Table 2: key, theory-based and validated <span style="color:red">distal, underlying firm-related</span> antecedents and their availability on surveys</h3>
+<!-- Table 2 start -->
+<div>Table content is pending<div>
+<div>This table will catologue questions that conceptually map to distal antecedents in a published, peer-reviewed study.</div>
+<div>Basee on validated theories/frameworks that include:
+	<ul>
+		<li>Self-determination theory. Source: Ryan RM, Deci EL. Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist. 2000;55(1):68-78. Available from: <a href="http://doi.apa.org/getdoi.cfm?doi=10.1037/0003-066X.55.1.68">http://doi.apa.org/getdoi.cfm?doi=10.1037/0003-066X.55.1.68</a></li>
+		<li>Jobs demands, resources. Source: Schaufeli WB, Bakker AB. Job demands, job resources, and their relationship with burnout and engagement: a multi-sample study. J Organiz Behav. 2004;25(3):293-315. Available from: <a href="http://doi.wiley.com/10.1002/job.248">http://doi.wiley.com/10.1002/job.248</a></li>
+		<li>Integrative model of human growth at work. Source: Spreitzer GM, Porath CM. Self-Determination as a Nutriment for Thriving: Building an Integrative Model of Human Growth at Work Page. In: Gagne M, editor. The Oxford Handbook of Work Engagement, Motivation, and Self-Determination Theory. 1 edition. Oxford; New York: Oxford University Press; 2014. p. 245-258. <a href="https://www.worldcat.org/title/879601753">https://www.worldcat.org/title/879601753</a></li>
+		<li>Complexity leadership theory. Source: Uhl-Bien M, Arena M. Leadership for organizational adaptability: A theoretical synthesis and integrative framework. The Leadership Quarterly. 2018;29(1):89-104. Available from: <a href="http://www.sciencedirect.com/science/article/pii/S104898431730111X">http://www.sciencedirect.com/science/article/pii/S104898431730111X</a></li>
+	</ul>
+</div>
+<div>Examples include:
+	<ul>
+		<li>Autonomy</li>
+		<li>Mastery</li>
+		<li>Meaningfulness</li>
+		<li>Membership</li>
+		<li>Demands/resources</li>
+	</ul>
+</div>
+<!-- Table 2 stop  -->
+
+<h3>Table 3: key, validated <span style="color:red">proximal, immediate, day-to-day</span> antecedents and their availability on surveys</h3>
+<!-- Table 3 start -->
+<div>Table content is pending</div>
+<div>This table will catologue questions that have been associated with one or more workforce states in a published, peer-reviewed study.</div>
+<div>A negative example that would contribute to the <span style="color:red">underlying, distal</span> antecedents of autonomy and burden (above) includes :
+<ul>
+	<li>EHR burden (details at <a href="https://www.healthit.gov/topic/certification-health-it/ehr-reporting-program">HealthIT.gov</a> and <a href="https://www.wikidoc.org/index.php/Electronic_medical_record#Monitoring_quality">WikiDoc</a>).
+		<ul>
+			<li>Associated with: burnout</li>
+			<li>EHR exposure be the proximal antecedent and lack of autonomy or voice by the front line in designing EHR workflow.</li>
+		</ul>
+	</li>
+<ul>
+A positive example that would contribute to <span style="color:red">distal</span> antecedents of mastery and membership (above) includes 
+<ul>
+	<li>Peer learning (PMIDs<a href="http://pubmed.gov/22310483,21345225">22310483,21345225</a>).
+		<ul>
+			<li>Associated with: engagement and thriving</li>
+			<li>The distal antecedent may be creation of membership across a workforce</li>
+		</ul>
+	</li>
+</ul>
+</div>
+<!-- Table 3 stop  -->
+<h2>References</h2>
+<ul>
+	<li>van Saane N. Reliability and validity of instruments measuring job satisfaction--a systematic review. Occupational Medicine. 2003. Available from: <a href="https://academic.oup.com/occmed/article-lookup/doi/10.1093/occmed/kqg038">https://academic.oup.com/occmed/article-lookup/doi/10.1093/occmed/kqg038</a></li>
+	<li>Nortje A. 7 Best Job Satisfaction Scales, Questionnaires & Surveys [Internet]. PositivePsychology.com. 2021 [cited 2022 Oct 16]. Available from: <a href="https://positivepsychology.com/job-satisfaction-questionnaires-surveys/">https://positivepsychology.com/job-satisfaction-questionnaires-surveys/</a></li>
+</ul>
 <p><a href="https://github.com/ebmgt/wellbeing_surveys_-_open_inventory/blob/main/README.md">More detail and background</a></p>
+
 </body>
 </html>
