@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1>Evidence-based Management in healthcare</h1>
+  <h2>Common usages of R for statistical analyses</h2>
+  <h3>Rates and trends over time</h3>
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+
+	</code>
+	<code data-type="sample-code">
+
+# Simple demonstration
+
+# Dataframe
+dataframe <- read.table(textConnection('
+  Year, Respondents, Burnout
+  2019, 15,          7
+  2020, 15,          6
+  2021, 15,          5
+  2022, 15,          4
+  2023, 15,          3
+'), header=TRUE, sep=",",strip.white=TRUE)
+
+# Analysis
+prop.trend.test(dataframe$Burnout, dataframe$Respondents, score = seq_along(dataframe$Respondents))
+
+(results <- cor.test(c(1:nrow(dataframe)), dataframe$Burnout/dataframe$Respondents, method = 'spearman'))
+
+plot(dataframe$Year, dataframe$Burnout/dataframe$Respondents, 
+     ylim=c(0,1), xlab='Year', ylab='Burnout rate', main='Burnout over time')
+xmin <- par("usr")[1] + strwidth("A")
+xmax <- par("usr")[2] - strwidth("A")
+ymin <- par("usr")[3] + 1.2*strheight("A")
+ymax <- par("usr")[4] - strheight("A")
+text(xmax,ymax-strheight("A"),adj=c(1,1), paste0("P-value (Spearman): ", round(results$p.value,3)))
+
+
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+	<table border=0 width=100%>
+		<tr>
+			<td width=50%>Paste your code into window above</td>
+			<td width=50%>Press Ctrl+L to clear the console.</td>
+		</tr>
+	</table>
+<div>&nbsp;</div>
+<div>Support code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
