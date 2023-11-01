@@ -10,9 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/include/includeHTML.css">
+<script src="/include/includeHTML.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/ebmgt.js"></script>
-<script src="/include/includeHTML.js"></script>
 <style>
 * {background-color: #9F8869;}
 * {
@@ -50,6 +51,7 @@
 
 <!--#include virtual="/include/menu.htm" -->
 	<!-- or use https://www.w3schools.com/howto/howto_html_include.asp --> 
+<div w3-include-html="/include/menu.html"></div>
 	
 <div class="row">
   <div class="column">
@@ -121,5 +123,12 @@ document.write("<div style='text-align:center'><a href='https://github.com/ebmgt
 </script>
 
 <div id="tip" style="display:none"></div>
+
+<!-- per https://www.w3schools.com/howto/howto_html_include.asp -->
+
+<script>
+includeHTML();
+</script>
+
 </body>
 </html>
