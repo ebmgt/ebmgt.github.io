@@ -14,6 +14,11 @@
 <script src="/include/includeHTML.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/ebmgt.js"></script>
+<!-- tooltip -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
 <style>
 * {background-color: #9F8869;}
 * {
@@ -54,6 +59,7 @@ table {
 }
 td { 
 	vertical-align:top;
+  	padding-right: 10px;
 }
 </style>
 </head>
@@ -71,7 +77,13 @@ td {
 <table style="width:100%">
 	<tr><td style="width:10px; background-color:platinum"></td><td>
 		<table style="width:100%"><tr>
-			<td style="width:50%">1. Creating workforce engagement and achieving organizational performance are not a zero-sum scenario, but can be synergistic.</td>
+			<td style="width:50%">1. Creating workforce <a href="#tip" class="hastip">engagement</a> and achieving organizational performance are not a zero-sum scenario, but can be synergistic.
+				<div class="tooltiptext"><div style="text-align:center;font-weight:bold">Engagement:</div>
+				<li>Defined as Vigor (physical engagement), Dedication (effective engagement), Absorption (cognitive engagement). <a href="https://doi.org/10.1177%2F0013164405282471">Schaufeli, 2006</a></li>
+				<li>Measured by: <a href="https://doi.org/10.1027%2F1015-5759%2Fa000430">UWES 3</a> and other scales</li>
+				<li>Antecedents: Self-determination theory (SDT) (<a href="https://www.jstor.org/stable/43852807">Ryan & Deci</a>) and Engagement framework(<a href="http://doi.org/10.2307/256287">Kahn, 1990</a>)</li>
+				</div>
+			</td>
 			<td style="width:50%">What we have found:
 				<ol>
 					<li>Badgett et al. Hospital Workforce Engagement and Inpatient Mortality Rate: Findings from the English National Health Service Staff Surveys. J Gen Intern Med. 2020 PMID: <a href="http://pubmed.gov/33051836">33051836</a></li>
