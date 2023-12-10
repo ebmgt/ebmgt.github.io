@@ -1,14 +1,10 @@
 // Create the tooltips only when document ready
 $(document).ready(function () {
-
-	document.getElementById("modified.date").innerHTML = document.lastModified;
-
-	var hash = window.location.hash 
     
-	//https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
-	// Apply tooltip on all <a/> elements with title attributes. Mousing over
-    // these elements will the show tooltip as expected, but mousing onto the
-    // tooltip is now possible for interaction with it's contents.
+//https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
+// Apply tooltip on all <a/> elements with title attributes. Mousing over
+// these elements will the show tooltip as expected, but mousing onto the
+// tooltip is now possible for interaction with it's contents.
     //$('a').each(function () {
     $('.hastip').each(function () {
         $(this).qtip({
