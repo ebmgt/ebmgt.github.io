@@ -4,7 +4,7 @@ This project is a meta-narrative summary of positive deviance and similar studie
 
 <ul>
   <li><a href="https://ebmgt.github.io/clinician_culture/Table%201.pdf">Table of contrasts</a></li>
-  <li><<a href="https://www.zotero.org/groups/612700/thriving.worksites/collections/IHWWDQKT">Bibliography (Zotero)</a></li>
+  <li><a href="https://www.zotero.org/groups/612700/thriving.worksites/collections/IHWWDQKT">Bibliography (Zotero)</a></li>
 </ul>
 
 You are encouraged to build on this project and reuse this file which is shared [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). 
