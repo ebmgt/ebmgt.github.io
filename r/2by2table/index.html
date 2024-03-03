@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1>Evidence-based Management in healthcare</h1>
+  <h2>Common usages of R for statistical analyses</h2>
+  <h3>2 by 2 Tables</h3>
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+
+	</code>
+	<code data-type="sample-code">
+#Option 1: numerators and denominators
+Outcomes	<- c( 18, 14 ) # 18, 18 is the upper row for treatment and control groups, respectively
+Totals		<- c( 36, 24 ) # 36, 24 is the column totals for treatment and control groups, respectively
+prop.test(Outcomes, Totals)
+#prop.trend.test(Outcomes, Totals, score = 1:length(Totals))
+
+# Option 2: two-by-two table
+twobytwo=rbind(
+		c(18,18), # 18, 18 is the upper row for treatment and control groups, respectively
+		c(14,10)) # 14, 10 is the lower row
+chisq.test(twobytwo)
+fisher.test(twobytwo)
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+	<table border=0 width=100%>
+		<tr>
+			<td width=50%>Paste your code into window above</td>
+			<td width=50%>Press Ctrl+L to clear the console.</td>
+		</tr>
+	</table>
+<div>&nbsp;</div>
+<div>Support code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
