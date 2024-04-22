@@ -1,7 +1,7 @@
 <h1>Job Crafting</h1>
 
 <ul>
-  <li><a href="https://github.com/ebmgt/job-crafting/blob/main/README.md">Meta-analysis of the mpact of Job Crafting and workforce burnout, engagement, task performance</a></li>
+  <li><a href="https://github.com/ebmgt/job-crafting/blob/main/README.md">Meta-analysis of the impact of Job Crafting and workforce burnout, engagement, task performance</a></li>
 </ul>
 
 You are encouraged to build on this project and reuse this file which is shared [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). 
