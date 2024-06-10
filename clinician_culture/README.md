@@ -1,6 +1,6 @@
 <h1>Clinician Culture: a meta-narrative of positive deviance studies</h1>
 
-Link to this project: https://ebmgt.github.io/clinician_culture/
+Link to this project: <a href="https://ebmgt.github.io/clinician_culture/">https://ebmgt.github.io/clinician_culture/</a>
 
 This project is a meta-narrative summary of positive deviance and similar studies that give qualitative contrasts of individual clinicians or clinical sites who are positive deviants in a process or outcome measure, compared to individuals or sites that are not 'bright spots'.
 
