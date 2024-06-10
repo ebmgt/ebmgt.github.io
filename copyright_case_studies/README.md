@@ -1,6 +1,7 @@
+<!-- put the HTML code in README.md rather than index.html -->
 <h1>Do Survey Copyright Claims Affect Continued Survey Development and Research: a Tale of Three Quantitative Case Studies</h1>
 
-Shortcut to this repository: https://github.com/ebmgt/copyright_case_studies
+Shortcut to this repository: <a href="https://github.com/ebmgt/copyright_case_studies">https://github.com/ebmgt/copyright_case_studies</a>
 
 This project is three quantitative case studies of varying approach to copyright restrictions and long-term consequencies. This project is being submitted for publication.
 
