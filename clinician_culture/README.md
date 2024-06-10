@@ -1,3 +1,4 @@
+<!-- put the HTML code in README.md rather than index.html -->
 <h1>Clinician Culture: a meta-narrative of positive deviance studies</h1>
 
 Link to this project: <a href="https://ebmgt.github.io/clinician_culture/">https://ebmgt.github.io/clinician_culture/</a>
