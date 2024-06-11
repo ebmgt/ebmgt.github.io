@@ -6,7 +6,7 @@ Shortcut to this repository: <a href="https://ebmgt.github.io/copyright_case_stu
 This project is three quantitative case studies of varying approach to copyright restrictions and long-term consequencies. This project is being submitted for publication.
 
 <ul>
-  <li><a href="https://ebmgt.github.io/copyright_case_studies/data_and_code">Data and code</a></li>
+  <li><a href="https://github.com/ebmgt/copyright_case_studies/tree/main/data_and_code">Data and code</a></li>
   <li><a href="https://www.zotero.org/groups/612700/thriving.worksites/collections/R5HZDWFW">Bibliography (Zotero)</a></li>
 </ul>
 
