@@ -3,7 +3,7 @@
 
 Shortcut to this repository: <a href="https://ebmgt.github.io/copyright_case_studies">https://ebmgt.github.io/copyright_case_studies</a>
 
-This project is three quantitative case studies of varying approach to copyright restrictions and long-term consequencies. This project is being submitted for publication.
+This project is quantitative case studies of varying approach to copyright restrictions and long-term consequencies. We hypothesis that surveys with restrictive copyright claims will have less ongling research and development. This project is being submitted for publication.
 
 <ul>
   <li><a href="https://github.com/ebmgt/copyright_case_studies/tree/main/methods">Methods</a></li>
