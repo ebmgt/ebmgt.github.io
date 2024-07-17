@@ -1,5 +1,5 @@
 <!-- put the HTML code in README.md rather than index.html -->
-<h1>Do Survey Copyright Claims Affect Continued Survey Development and Research: a Tale of Three Quantitative Case Studies</h1>
+<h1>Do Survey Copyright Claims Affect Continued Survey Development and Research: a Tale of Quantitative Case Studies</h1>
 
 Shortcut to this repository: <a href="https://ebmgt.github.io/copyright_case_studies">https://ebmgt.github.io/copyright_case_studies</a>
 
