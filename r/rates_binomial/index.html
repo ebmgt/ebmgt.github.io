@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1>Evidence-based Management in healthcare</h1>
+	<h2>R Online</h2>
+  <h3>Rates and proportions with binomial expansion</h3>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Simple demonstration
+dbinom(0,2,0.5) 		# the chances of getting no heads in two coin tosses
+dbinom(1,2,0.5) 		# the chances of getting one heads in two coin tosses
+sum(dbinom(0:1,2,0.5))	# the chances of getting one or less heads in two coin tosses
+
+# Real data: the chances of getting heads 3 times of less with 12 coin tosses
+sum(dbinom(0:3,12,0.5))
+
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+<div>Code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
