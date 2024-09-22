@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<table border=0 width="520px" align="center"><tr><td><a href="http://wichita.kumc.edu/"><img src="/images/kusmw_logo.gif" border=0 /></a></td><td align="center"><h1 style="color:#0049AE">R online</h1><h2>Percentiles against benchmarks</h2></td><td><a href="http://www.kumc.edu/"><img src="/images/masthead_logo.gif" border=0 /></a></td></tr></table>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Problem: 65% (65 of 99 respondent)s answer always or often to the dedication (enthusiasm) dimension of engagement at work.
+# Using the NHS Staffsurveys as reference:
+## 0.75 of staff in acute or combined Trusts answered this questions always or often
+pop.mean <- 0.7454
+## across the 132 Trusts in the survey, the standard deviation between the Trusts was
+std.dev <- 0.0279
+# What is the probability of our result or less? Restated, in what percentile of NHS results is our result?  
+dnorm(0.65, mean = pop.mean, sd = std.dev, log = FALSE)
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+<div>Code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
