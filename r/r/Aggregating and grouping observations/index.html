@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<table border=0 width="520px" align="center"><tr><td><a href="http://wichita.kumc.edu/"><img src="/images/kusmw_logo.gif" border=0 /></a></td><td align="center"><h1 style="color:#0049AE">R online</h1><h2>Aggregating and grouping observations</h2></td><td><a href="http://www.kumc.edu/"><img src="/images/masthead_logo.gif" border=0 /></a></td></tr></table>
+	
+	<div>The aggregated data can then be used in a positive deviance analysis at <a href="https://qitools.github.io/">https://qitools.github.io/</a></div>
+	<div>After running the file, copy the output (minus the '>' prompt on the final line) into Notepad and save the file as filename.csv.</div>
+	<div>&nbsp;</div>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+		library(plyr)
+	</code>
+	<code data-type="sample-code">
+## Dataframe
+dataframe <- read.table(textConnection('
+Name,			    ID,  Group,  Time,
+Nightingale,	 1,  1,      60,
+Dix,			     2,  2,      90,
+Barton,			   3,  1,      70,
+Nightingale,	 1,  1,      65,
+Dix,			     2,  2,      95,
+Barton,			   3,  1,      77,
+Nightingale,	 1,  1,      62,
+Dix,			     2,  2,      92,
+Barton,			   3,  1,      77,
+Nightingale,	 1,  1,      50,
+Dix,			     2,  2,      80,
+Barton,			   3,  1,      60,
+Nightingale,	 1,  1,      55,
+Dix,			     2,  2,      85,
+Barton,			   3,  1,      65,
+'), header=TRUE, sep=",",strip.white=TRUE)
+
+dataframe.aggregated <- ddply(dataframe, ~ Name+ID+Group, summarize, M.STD = paste0(round(mean(Time),3),'(', round(sd(Time),3),')'), Observations = length(Time))
+dataframe.aggregated <- dataframe.aggregated[order(dataframe.aggregated$M.STD, decreasing = TRUE),]
+write.csv(dataframe.aggregated, row.names = F)
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+<div>Code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
