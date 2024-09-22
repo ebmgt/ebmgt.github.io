@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<table border=0 width="520px" align="center"><tr><td><a href="http://wichita.kumc.edu/"><img src="/images/kusmw_logo.gif" border=0 /></a></td><td align="center"><h1 style="color:#0049AE">R online</h1><h2>Bayesian p-values</h2></td><td><a href="http://www.kumc.edu/"><img src="/images/masthead_logo.gif" border=0 /></a></td></tr></table>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Goodman's example using standard p=0.05 with Prior prob of null hypothesis 0.5
+print('Example from Goodman. 2. Bayes Factor. Ann Intern Med 1999 PMID 10383350')
+PriorProb = 0.5
+writeLines(paste("Prior probabiity of null hypothesis: ", PriorProb))
+PriorOdds = PriorProb/(1-PriorProb)
+
+P_value   = 0.05 # Typical threshold for rejecting null hypothesis
+z <- qnorm(P_value/2, lower.tail = FALSE)
+MinimumBayesFactor<- round(exp(-z^2/2),2)
+writeLines(paste("Minimum Bayes Factor: ",MinimumBayesFactor))
+
+PosteriorOdds = MinimumBayesFactor*PriorOdds
+PosteriorProb = round(PosteriorOdds/(1+PosteriorOdds),2) # So, a p=0.05 actually has a 13% chance of the null hypothesis being true
+writeLines(paste("Probability of null hypothesis given p value of ", P_value,': ',PosteriorProb,' or ',PosteriorProb*100,'%.'," Woah, that is a surprise.",sep=''))
+
+
+# DMSE QI example. For using Bayes in QI, see Gustafson et al. Health Serv Res. 2003 PMID: 12785571
+writeLines("\n\nExample of HbA1c reduction from Odgers-Jewell et al. Diabet Med. 2017  PMID: 28226200.\nFor using Bayes in QI, see Gustafson et al. Health Serv Res. 2003 PMID: 12785571")
+PriorProb = 0.0002 # From PMID 28226200
+writeLines(paste("Prior probabiity of null hypothesis: ", PriorProb))
+PriorOdds = PriorProb/(1-PriorProb)
+
+P_value   = 0.07 # Our p=value
+P_value   <- as.character(sprintf(P_value, fmt='%#.3f'))
+z <- qnorm(as.numeric(P_value)/2, lower.tail = FALSE)
+MinimumBayesFactor<- round(exp(-z^2/2),2)
+writeLines(paste("Minimum Bayes Factor: ",MinimumBayesFactor))
+
+PosteriorOdds = MinimumBayesFactor*PriorOdds
+PosteriorProb <- as.character(sprintf(PosteriorOdds, fmt='%#.3f'))
+writeLines(paste("Probability of null hypothesis given p value of ", P_value,': ',PosteriorProb,' or ',as.numeric(PosteriorProb)*100,'%.',sep=''))
+
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+<div>Code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+</body>
+</html>
