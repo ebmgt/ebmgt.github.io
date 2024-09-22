@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1>Evidence-based Management in healthcare</h1>
+	<h2>Poisson test</h2>
+</td><td><a href="http://www.kumc.edu/"><img src="/images/masthead_logo.gif" border=0 /></a></td></tr></table>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Per example of Michael Foley (cited below), in the 2002 World Cup First round of 95 goals, 131 golas were scored and the historical rate of goals was 1.5 goals per game
+		
+poisson.test(131, T = 95, r = 1.5,
+             alternative = "two.sided",
+             conf.level = 0.95)
+		
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+	<h3>Code sources</h3>
+<ul>
+	<li>Example is from <a href="https://bookdown.org/mpfoley1973/statistics/one-sample-poisson-test.html">https://bookdown.org/mpfoley1973/statistics/one-sample-poisson-test.html</a> by Michael Foley in: Data Analyst Handboox
+Data Analyst Handbook
+
+
+2023-03-01</li>
+	<li>Staticical documentation is from <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/poisson.test">https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/poisson.test</a></li>
+	<li>Stuctural code to create the workspace is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></li>
+	</ul>
+</body>
+</html>
