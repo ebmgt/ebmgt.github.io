@@ -1,76 +1,33 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="en-US">
 <head>
 <title>Surveys of workforce well-being and antecedents: a compendium</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="description" content="workforce surveys, evidence-based management">
-<meta name="keywords" content="workforce surveys, evidence-based management">
-<meta name="Author" content="Bob Badgett">
-<meta name="Version" content="1">
-<meta name="Date" content="06/10/2023 1:00PM">
-<!-- w3schools css -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<meta name="description" content="" >
+	<meta name="keywords" content="surveys workforce" >
+	<link rel="stylesheet" type="text/css" href="styles.css" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- include -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/include/includeHTML.css">
+<script src="/include/includeHTML.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/include/ebmgt.js"></script>
+<!-- tooltip (also initialized in include/ebmgt.js 
+	https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
+-->
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script
   src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
   integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
   crossorigin="anonymous"></script>
-<!-- menu and other -->
-<script src="/include/includeHTML.js"></script>
-<script src="/include/ebmgt.js"></script>
-<!-- tooltip (also initialized in include/ebmgt.js 
-	https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
--->
 <!-- tooltip -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
-<script>
-// Create the tooltips only when document ready
-$(document).ready(function () {
 
-	document.getElementById("modified.date").innerHTML = document.lastModified;
-
-	var hash = window.location.hash 
-    
-	//https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
-	// Apply tooltip on all <a/> elements with title attributes. Mousing over
-    // these elements will the show tooltip as expected, but mousing onto the
-    // tooltip is now possible for interaction with it's contents.
-    //$('a').each(function () {
-    $('.hastip').each(function () {
-        $(this).qtip({
-            content: $(this).next('.tooltiptext'),
-            hide: {
-                fixed: true,
-                delay: 300
-            },
-			position: {
-				my: 'top left',  // Position my top left...
-				at: 'bottom left', // at the bottom right of...
-			},
-			style: { classes: 'ToolTipClass'
-			}
-		});
-    });
-
-	$('.hastip').click(function(e) {
-		e.stopPropagation();
-		return false;
-	});	
-	
-});
-
-var DivName = "tips";
-function toggle(itemno)
-	{
-	document.getElementById(itemno).style.display = (document.getElementById(itemno).style.display == "none" ) ? "" : "none";
-	}
-
-</script>
 <style>
 body {
     padding: 50px;
@@ -96,15 +53,17 @@ tr, th{text-align:center}
 </style>
 
 </head>
-<body bgcolor="white" style="margin:0px">
-	
+
+<body>
 <!-- header start -->
 <h1>Evidence-based Management in healthcare</h1>
+
 <!--#include virtual="/include/menu.htm" -->
-	<!-- or use https://www.w3schools.com/howto/howto_html_include.asp --> 
+<!-- or use https://www.w3schools.com/howto/howto_html_include.asp --> 
+
 <div w3-include-html="/include/menu.html"></div>
-	<!-- see also https://www.w3schools.com/w3css/w3css_navigation.asp -->
-<!-- header start -->
+<!-- see also https://www.w3schools.com/w3css/w3css_navigation.asp -->
+<!-- header stop -->
 	
 <div style=" position: relative; float: right;">This document was last modified: <span id="modified.date"></span></div>
 <script>
