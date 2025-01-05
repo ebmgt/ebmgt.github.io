@@ -9,9 +9,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-<!-- includeHTML< . Dont forget to add script at the bottom of the page -->
+<!-- includeHTML Dont forget to add script at the bottom of the page -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/include/includeHTML.css">
+<script src="/include/includeHTML.js"></script>
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/ebmgt.js"></script>
@@ -25,7 +26,7 @@ body {background-color: #9F8869;}
     min-height: 100%; /* Ensures the row fills the entire viewport height */
   }
 
-/* Create two equal columns that floats next to each other */
+/* Create two equal columns that float next to each other */
 .column {
     width: 50%;
     padding: 10px;
@@ -54,7 +55,10 @@ body {background-color: #9F8869;}
 <h1>Evidence-based Management in healthcare</h1>
 
 <div w3-include-html="/include/menu.html"></div>
-	
+<div style=" position: relative; float: right;">This document was last modified: <span id="modified.date"></span></div>
+<script>
+document.getElementById("modified.date").innerHTML = document.lastModified;
+</script>
 <h2>The Dunning Kruger effect</h2>
 <div>Supporting mangers and leaders in health care is a key touchpoint to improving both the delivery of healthcare and the well-being of the workforce.</div>
 The Dunning-Kruger effect is a barrier to helping managers develop as studies find that people, including physicians, have difficulty with self-assessment of their skills in many domains including management skills. This is exacerbated by individuals with the least skill have the most difficulty assessing that skill, "Unskilled and Unaware" (Kruger, Dunning 1999 DOI <a href="http://doi.org/10.1037/0022-3514.77.6.1121">10.1037/0022-3514.77.6.1121</a>).
