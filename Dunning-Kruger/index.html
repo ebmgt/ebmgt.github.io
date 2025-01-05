@@ -19,18 +19,23 @@
 }
 
 /* Create two equal columns that floats next to each other */
-.column {
-	float: left;
-	width: 50%;
-	padding: 10px;
-	/* height: 300px;  Should be removed. Only for demonstration */
-}
+<style>
+  .row {
+    display: flex;                /* Use flexbox to align columns side by side */
+    height: 100vh;                /* Set the row to fill the viewport height */
+  }
+
+  .column {
+    flex: 1;                      /* Make columns equally share available width */
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
   .column.right-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    display: flex;                /* Enable flexbox for the right column */
+    flex-direction: column;       /* Stack content vertically */
+    justify-content: flex-end;    /* Push content to the bottom */
+    align-items: flex-end;        /* Align content to the right */
     text-align: right;
   }
 
@@ -70,7 +75,7 @@
 <h3>Plot with real study findings</h3>
 
 	<img src="Van%20Velsor.%20Leadership%20Dunning-Kruger%20-%20chart.%20Human%20Resource%20Management%201993.png" style="width:80%" alt="Dunning-Kruger plot using data from Van Velsor, 1993" />
-	<div>Dunning-Kruger plot using data from Van Velsor, 1993 (Badgett and Duran 201x. DOI: ). <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</div>
+	<div>Dunning-Kruger plot using data from Van Velsor, 1993 (Badgett and Duran 2017. DOI: <a href="http://doi.org/10.1017/cem.2017.419">10.1017/cem.2017.419</a>). <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.</div>
 	
 	<div>Similarly, Collins found a similar plot of physician's readiness to lead across quartiles of their understanding of the difference between leadership versus management.</div>
 	
