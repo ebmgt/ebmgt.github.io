@@ -26,6 +26,14 @@
 	/* height: 300px;  Should be removed. Only for demonstration */
 }
 
+  .column.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+  }
+
 /* Clear floats after the columns */
 .row:after {
 	content: "";
@@ -75,12 +83,13 @@
 	<li><a href="https://www.zotero.org/groups/612700/thriving.worksites/collections/T67YV64Q">Additional studies at Zotero</a></</li>
     </ul>
 </div>
-<div class="column" style="max-width: 400px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; height: 100%; text-align: right;">
-  <img src="/images/midwest/Aurora%20from%20Coronado%20Heights%20-%202024-10-10.jpg" style="width: 400px;" alt="Aurora Borealis from Coronado Heights, KS" />
-  <div>Aurora Borealis from Coronado Heights, KS on Oct 10/2024. Salina, KS is on the horizon. 
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+
+  <div class="column right-content">
+    <img src="/images/midwest/Aurora%20from%20Coronado%20Heights%20-%202024-10-10.jpg" style="width: 400px;" alt="Aurora Borealis from Coronado Heights, KS" />
+    <div>Aurora Borealis from Coronado Heights, KS on Oct 10/2024. Salina, KS is on the horizon. 
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+    </div>
   </div>
-</div>
 
 </div>
 
