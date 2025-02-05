@@ -1,5 +1,5 @@
 <!-- put the HTML code in README.md rather than index.html -->
-<h1>Spline regressin analysis for non-linear relationships</h1>
+<h1>Spline regression analysis for non-linear relationships</h1>
 
 Shortcut to this repository: <a href="https://ebmgt.github.io/spline">https://ebmgt.github.io/spline</a>
 
