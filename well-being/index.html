@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html lang="en-US">
+<head>
+	<title>Evidence-based Management in Healthcare</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index,follow" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/include/includeHTML.css">
+<script src="/include/includeHTML.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/include/ebmgt.js"></script>
+<!-- tooltip (also initialized in include/ebmgt.js 
+	https://plugins.jquery.com/qTip2/ - was http://qtip2.com/
+-->
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"
+  integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY="
+  crossorigin="anonymous"></script>
+<!-- tooltip -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qtip2@3.0.3/dist/jquery.qtip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css">
+<style>
+body, td {background-color: #9F8869;}
+* {
+	box-sizing: border-box;
+	/* border: solid #9F8869; */
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+	/* height: 300px;  Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+ 	display: table;
+	clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+/* Tooltip styling */
+.tooltiptext{
+    display: none;
+}
+.ToolTipClass{
+	color:#3f3129;
+	border-color:#3f3129;
+	background-color: white;
+	font-size: 10px;
+}
+/* EBMgt customizations */
+body {
+	margin: 20px;
+}
+pre {
+	white-space: pre-wrap;
+}
+table {
+  border-collapse: collapse;
+}
+td { 
+	vertical-align:top;
+  	padding-right: 10px;
+}
+</style>
+</head>
+
+<body>
+<h1>Evidence-based Management in healthcare</h1>
+
+<!--#include virtual="/include/menu.htm" -->
+	<!-- or use https://www.w3schools.com/howto/howto_html_include.asp --> 
+<div w3-include-html="/include/menu.html"></div>
+
+	<!-- see also https://www.w3schools.com/w3css/w3css_navigation.asp -->
+
+<!-- Content -->
+<h2>Well-being*: Integrating Engagement and Burnout</h2>
+
+  <img src="..\images\well-being-schema.png" alt="Schema of states of well-being and antecedents and outcomes"/>
+
+  <div style="font-weight:bold">Notes:</div>
+  <div>* Van den Broeck, 2010 merged burnout, engagement, and job satisfaction into well-being.<br>
+    This summary framework is consistent with Phipps-Taylor, 2016 (PMID <a href="https://pubmed.gov/27995705">27995705</a>) and Ryff, 2013 (PMID <<a href="https://pubmed.gov/24281296">24281296</a>).</div>
+  <div>† Label colors matched the color of the authors that used that specific label.</div>
+  <div style="font-weight:bold">References:</div>
+  <ol>
+    <li>Demerouti E, Bakker AB, Nachreiner F, Schaufeli WB. The job demands-resources model of burnout. J Appl Psychol. 2001 Jun;86(3):499–512. PMID: <a href="https://pubmed.gov/11419809">11419809</a> DOI: <a href="https://doi.org/10.1037/0021-9010.86.3.499">10.1037/0021-9010.86.3.499</a></li>
+    <li>May DR, Gilson RL, Harter LM. The psychological conditions of meaningfulness, safety and availability and the engagement of the human spirit at work. Journal of Occupational and Organizational Psychology. 2004 Mar;77(1):11–37. DOI: <a href="https://doi.org/10.1348/096317904322915892">10.1348/096317904322915892</a></li>
+    <li>Moss Kanter RM. Mastery, Membership, and Meaning: Three Dimensions of Commitment. Evolve!: succeeding in the digital culture of tomorrow [Internet]. Boston, Mass.: Harvard Business School Press; 2001 [cited 2020 Aug 9]. p. 204–217. Available from: <a href="https://archive.org/details/evolve0000unse">https://archive.org/details/evolve0000unse</a></li>
+    <li>Pink DH. Drive: The Surprising Truth About What Motivates Us. Riverhead Books; 2011.ISBN: <a href="https://search.worldcat.org/search?q=1594484805">1594484805</a></li>
+    <li>Kahn WA. Psychological Conditions of Personal Engagement and Disengagement at Work. Acad Manage J. 1990 Dec 1;33(4):692–724. DOI: <a href="https://doi.org/10.2307/256287">10.2307/256287</a></li>
+    <li>Phipps-Taylor M, Shortell SM. More Than Money: Motivating Physician Behavior Change in Accountable Care Organizations. Milbank Q. 2016 Dec;94(4):832–861. PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5192815">PMC5192815</a> DOI: <a href="https://doi.org/10.1111/1468-0009.12230">10.1111/1468-0009.12230</a>a></li>
+    <li>Ryan RM, Deci EL. Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. American Psychologist. 2000;55(1):68–78. DOI: <a href="https://doi.org/10.1037/0003-066X.55.1.68">10.1037/0003-066X.55.1.68</a></li>
+    <li>Van den Broeck A, Vansteenkiste M, De Witte H, Soenens B, Lens W. Capturing autonomy, competence, and relatedness at work: Construction and initial validation of the Work-related Basic Need Satisfaction scale. Journal of Occupational and Organizational Psychology. 2010 Dec 1;83(4):981–1002. DOI: <a href="https://doi.org/10.1348/096317909X481382">10.1348/096317909X481382</a></li>
+</li>
+  </ol>
+
+<p>This project is maintained by <a href="https://ebmgt.github.io/">ebmgt.github.io/</a></p>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+
+<script>
+//For gh-pages
+//Page history and edit
+var pagename = location.pathname.split('/').slice(-1);
+if (pagename.toString().length < 1){pagename = "index.html"}
+document.write("<div style='text-align:center'><a href='https://github.com/ebmgt/ebmgt.github.io/blob/master/" + pagename + "'>Edit this page</a> - <a href='https://github.com/ebmgt/ebmgt.github.io/commits/master/" + pagename + "'>Page history</a></div>")
+</script>
+
+<script type="text/javascript">
+   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+   try {
+      var pageTracker = _gat._getTracker("UA-56740469-1");
+      pageTracker._trackPageview();
+   } catch(err) {}
+</script>
+
+<div id="tip" style="display:none"></div>
+
+<!-- per https://www.w3schools.com/howto/howto_html_include.asp -->
+
+<script>
+includeHTML();
+</script>
+  
+</body>
+</html>
