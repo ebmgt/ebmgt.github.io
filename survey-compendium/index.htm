@@ -555,6 +555,408 @@ document.getElementById("modified.date").innerHTML = document.lastModified;
 </div>
 <!-- Table 1 stop -->
 
+<!-- Table 1 ‒ rotated (surveys as rows)  -->
+<table>
+  <!-- header row -->
+  <tr>
+    <th style="width:200px;text-align:center">Survey</th>
+    <th style="width:125px;text-align:center">Reuse?</th>
+    <th style="width:125px;text-align:center">Benchmarks?</th>
+    <th style="width:125px;text-align:center">Thriving</th>
+    <th style="width:125px;text-align:center">Engagement</th>
+    <th style="width:125px;text-align:center">Satisfaction</th>
+    <th style="width:125px;text-align:center">Burnout</th>
+  </tr>
+
+  <!-- 1 ‒ AHRQ SOPS ------------------------------------------------------>
+  <tr>
+    <th><a href="https://www.ahrq.gov/sops/" target=_blank>AHRQ&nbsp;SOPS</a></th>
+    <td style="width:125px; background:lightgreen">
+      Federal: mostly Public Domain<br>(<a href="https://info.ahrq.gov/?page=15">details</a>)
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="https://www.ahrq.gov/sops/databases/">Yes</a>
+    </td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+  </tr>
+
+  <!-- 2 ‒ AMA (Mini‑Z) --------------------------------------------------->
+  <tr>
+    <th><a href="https://edhub.ama-assn.org/steps-forward/pages/professional-well-being" target=_blank>
+        AMA<br>(Mini‑Z)</a></th>
+    <td style="width:125px">
+      Copyright unclear<br>
+      <a href="#tip" class="hastip">Details</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-weight:bold">Copyright unclear</div>
+        <li>Per AMA: the&nbsp;<a href="https://edhub.ama-assn.org/steps-forward/module/2702509">Mini‑Z</a> is
+            <a href="https://www.ama-assn.org/about/terms-use">Copyrighted</a></li>
+        <li>The single‑item burnout question (SIBOQ) was published in 1994
+            (<a href="http://pubmed.gov/10135263">PMID 10135263</a>) in <i>HMO Practice</i>;
+            rights now held by ACP.</li>
+      </div>
+    </td>
+    <td style="width:125px"></td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul><li>Overall, I am satisfied with my current job.</li></ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Mini‑Z</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Mini‑Z</div>
+        <ul>
+          <li>Using your own definition of “burnout” please select one:</li>
+          <li>…(symptom anchors 1 – 5)…</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 3 ‒ APA 2014 ------------------------------------------------------->
+  <tr>
+    <th><a href="https://www.apa.org/news/press/releases/2014/04/employee-distrust" target=_blank>APA 2014</a></th>
+    <td style="width:125px"></td>
+    <td style="width:125px"></td>
+    <td style="width:125px">No</td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul>
+          <li>When I get up in the morning, I feel like going to work</li>
+          <li>I am enthusiastic about my job</li>
+          <li>I am immersed in my work (anchors 6)</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul><li>All in all, I am satisfied with my job.</li></ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>During my workday, I typically feel tense or stressed out.</li></ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 4 ‒ Gallup Q12 ----------------------------------------------------->
+  <tr>
+    <th><a href="https://www.gallup.com/workplace/356063/gallup-q12-employee-engagement-survey.aspx" target=_blank>
+        Gallup&nbsp;Q12</a></th>
+    <td style="width:125px"></td>
+    <td style="width:125px"></td>
+    <!-- Thriving -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>This last year, I have had opportunities at work to learn and grow.</li>
+        </ul>
+      </div>
+    </td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+  </tr>
+
+  <!-- 5 ‒ GSS ------------------------------------------------------------>
+  <tr>
+    <th><a href="https://gss.norc.org/Pages/quality-of-worklife.aspx" target=_blank>GSS</a></th>
+    <td style="width:125px; background:lightgreen">
+      Copyrighted<br>(<a href="https://gss.norc.org/terms-and-conditions">reuse details</a>)
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="https://gssdataexplorer.norc.org/variables/vfilter">Yes</a><br>
+      <a href="#tip" class="hastip">Hint</a>
+      <div class="tooltiptext">
+        Filter by Module “Quality of Working Life (90)”.
+      </div>
+    </td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul><li>On the whole, how satisfied are you with the work you do?</li></ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>How often do you come home from work exhausted?</li>
+          <li>How often do you find work stressful?</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 6 ‒ Mayo WBI ------------------------------------------------------->
+  <tr>
+    <th><a href="https://www.mywellbeingindex.org/" target=_blank>Mayo Well‑being Index (WBI)</a></th>
+    <td style="width:125px"></td>
+    <td style="width:125px"></td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">No</td>
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>Have you felt burned out from your work?</li></ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 7 ‒ NHS ------------------------------------------------------------>
+  <tr>
+    <th><a href="https://www.nhsstaffsurveys.com/results/interactive-results/" target=_blank>NHS</a></th>
+    <td style="width:125px; background:lightgreen">
+      Copyrighted<br>
+      <a href="#tip" class="hastip">Non‑commercial use&nbsp;details</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large">Copyrighted</div>
+        <div>06 / 10 / 2023: Use only with permission of NHS England.<br>(<a href="https://www.nhsstaffsurveys.com/faqs/">Source</a>)</div>
+      </div>
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="https://public.tableau.com/shared/5YNSYJZKR?:display_count=n&:origin=viz_share_link">Yes</a>
+    </td>
+    <!-- Thriving -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>I have opportunities to improve my knowledge and skills.</li>
+          <li>I can access the right learning and development when I need to.</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul>
+          <li>I look forward to going to work.</li>
+          <li>I am enthusiastic about my job.</li>
+          <li>Time passes quickly when I am working (anchors 5).</li>
+        </ul>
+      </div>
+    </td>
+    <td style="width:125px">No</td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>How often do you feel burnt out because of your work? (anchors 5)</li></ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 8 ‒ NIOSH WellBQ --------------------------------------------------->
+  <tr>
+    <th><a href="https://www.cdc.gov/niosh/docs/2021-110/" target=_blank>NIOSH&nbsp;WellBQ</a></th>
+    <td style="width:125px; background:lightgreen">
+      Federal: mostly Public Domain<br>(<a href="https://www.cdc.gov/other/agencymaterials.html">details</a>)
+    </td>
+    <td style="width:125px; background:pink">No</td>
+    <td style="width:125px">No</td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul>
+          <li>When I get up in the morning, I feel like going to work. (anchors 7)</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul>
+          <li>Overall, I am ____ with my job. (anchors 4)</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>How often do you experience fatigue when working?</li></ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 9 ‒ HRSA ----------------------------------------------------------->
+  <tr>
+    <th><a href="https://bphc.hrsa.gov/technical-assistance/clinical-quality-improvement/health-center-workforce-well-being-initiative"
+           target=_blank>HRSA</a></th>
+    <td style="width:125px; background:lightgreen">
+      Federal: mostly Public Domain<br>(<a href="javascript:alert('details pending')">details</a>)
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="https://data.hrsa.gov/topics/health-centers/workforce-well-being">Yes</a>
+    </td>
+    <td style="width:125px">No</td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>I feel more and more engaged in my work.</li></ul>
+      </div>
+    </td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes<br>(asks “very”)</div>
+        <ul><li>All things considered, I am very satisfied with my current job.</li></ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul><li>How often do you experience fatigue when you are working?</li></ul>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 10 ‒ OPM FEVS ------------------------------------------------------->
+  <tr>
+    <th><a href="https://www.opm.gov/fevs/" target=_blank>OPM FEVS</a></th>
+    <td style="width:125px; background:lightgreen">
+      Federal: mostly Public Domain<br>(<a href="javascript:alert('details pending')">details</a>)
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="https://www.opm.gov/fevs/reports/opm-fevs-dashboard/">Yes</a>
+    </td>
+    <!-- Thriving -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>Employees share job knowledge / look for new ways to improve / incorporate new ideas.</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Partially</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>My job inspires me.</li>
+          <li>I feel a strong personal attachment to my organisation.</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul>
+          <li>Considering everything, how satisfied are you with your job? (anchors 5)</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">
+          <a href="https://nam.edu/valid-reliable-survey-instruments-measure-burnout-well-work-related-dimensions/">
+            Oldenburg</a>
+        </div>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 11 ‒ Stanford PFI --------------------------------------------------->
+  <tr>
+    <th><a href="https://wellmd.stanford.edu/wellbeing-toolkit/howwemeasurewell-being.html" target=_blank>
+        Stanford PFI</a></th>
+    <td style="width:125px; background:lightgreen">
+      Copyrighted<br>
+      <a href="#tip" class="hastip">Non‑commercial use&nbsp;details</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large">Copyrighted</div>
+        <div>May use with attribution; no derivatives. See PFI website.</div>
+      </div>
+    </td>
+    <td style="width:125px; background:lightgreen">
+      <a href="http://pubmed.gov/38100103">Yes</a>
+    </td>
+    <td style="width:125px">No</td>
+    <!-- Engagement -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>Lacking in enthusiasm at work.</li>
+        </ul>
+      </div>
+    </td>
+    <!-- Satisfaction -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Yes</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Yes</div>
+        <ul><li>My work is satisfying to me.</li></ul>
+      </div>
+    </td>
+    <!-- Burnout -->
+    <td style="width:125px">
+      <a href="#tip" class="hastip">Indirect</a>
+      <div class="tooltiptext">
+        <div style="text-align:center; font-size:large;font-weight:bold">Indirect</div>
+        <ul>
+          <li>Physically / emotionally exhausted at work, etc.</li>
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+<!-- Table 1 end -->
+
+
 <h3>2: key, theory-based and validated <span style="color:red">distal, underlying <!--firm-related-->antecedents</span> and their availability on surveys</h3>
 <!-- Table 2 start -->
 <div>This table will catologue questions that conceptually map to distal antecedents in a published, peer-reviewed study.</div>
