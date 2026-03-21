@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1></h1>
+	<h2>R Online</h2>
+	<h3>ANOVA and ANCOVA</h3>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Per example of Myrna Anne Yeakle(cited below), in her 1975 studies of three interventions, including two different interventions with the Propoganda Game to teach "irrelevance."
+		
+# -----------------------------
+# Table 4.5
+# ANCOVA / ANOVA with Grade as covariate
+# -----------------------------
+
+# Covariate: Grade
+F_grade   <- 2.38
+df1_grade <- 1
+df2_grade <- 137
+p_grade   <- pf(F_grade, df1 = df1_grade, df2 = df2_grade, lower.tail = FALSE)
+
+# Main effect: Group
+F_group_45   <- 3.72
+df1_group_45 <- 2
+df2_group_45 <- 137
+p_group_45   <- pf(F_group_45, df1 = df1_group_45, df2 = df2_group_45, lower.tail = FALSE)
+
+p_grade
+p_group_45
+
+
+# -----------------------------
+# Table 4.6
+# ANCOVA with Year as covariate
+# -----------------------------
+
+# Covariate: Year
+F_year   <- 2.28
+df1_year <- 1
+df2_year <- 105
+p_year   <- pf(F_year, df1 = df1_year, df2 = df2_year, lower.tail = FALSE)
+
+# Main effect: Group
+F_group_46   <- 1.96
+df1_group_46 <- 2
+df2_group_46 <- 105
+p_group_46   <- pf(F_group_46, df1 = df1_group_46, df2 = df2_group_46, lower.tail = FALSE)
+
+p_year
+p_group_46
+		
+	</code>
+<!--
+	<code data-type="solution">
+		# Create a variable a, equal to 5
+		a <- 5
+
+		# Print out a
+		print(a)
+	</code>
+	<code data-type="sct">
+		test_object("a")
+		test_function("print")
+		success_msg("Great job!")
+	</code>
+	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+	<h3>Documentation</h3>
+<ul>
+	<li>Example is from:<br.
+Yeakle, Myrna Anne. The Ohio State University ProQuest Dissertations & Theses, 1975. Available at: <a href="https://www.proquest.com/openview/16382c80f0c6a09646cc15b3363e81df/">ProQuest</a, ERIC Number <a href="https://eric.ed.gov/?id=ED123629">ED123629</a> or <a href="https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu148699896675359&disposition=inline">Electronic Theses & Dissertations Center</a></li>
+	<li>Statistical documentation is from <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/poisson.test">https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/poisson.test</a></li>
+	<li>Structural code to create the workspace is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></li>
+	</ul>
+</body>
+</html>
