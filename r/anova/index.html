@@ -42,6 +42,8 @@ p_group_45   <- pf(F_group_45, df1 = df1_group_45, df2 = df2_group_45, lower.tai
 
 p_group_45
 
+message("\nSummary: after controlling for course grade, groups differ significantly at baseline for pretest scores.\n")
+
 
 # -----------------------------
 # Table 4.6
@@ -63,15 +65,9 @@ df1_group_46 <- 2
 df2_group_46 <- 105
 p_group_46   <- pf(F_group_46, df1 = df1_group_46, df2 = df2_group_46, lower.tail = FALSE)
 
-p_group_46		
-	</code>
-<!--
-	<code data-type="solution">
-		# Create a variable a, equal to 5
-		a <- 5
+p_group_46
 
-		# Print out a
-		print(a)
+message("\nSummary: after controlling for year in college, groups did not differ significantly at baseline for pretest scores.\n")
 	</code>
 	<code data-type="sct">
 		test_object("a")
