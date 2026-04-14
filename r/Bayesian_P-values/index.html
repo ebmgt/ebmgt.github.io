@@ -118,60 +118,54 @@ writeLines(
   <div id="status">Initializing webR...</div>
   <pre id="output"></pre>
 
-  <script type="module">
-    import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+<script type="module">
+  import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
 
-    const statusEl = document.getElementById("status");
-    const outputEl = document.getElementById("output");
-    const codeEl = document.getElementById("rcode");
-    const runBtn = document.getElementById("runBtn");
-    const clearBtn = document.getElementById("clearBtn");
+  const statusEl = document.getElementById("status");
+  const outputEl = document.getElementById("output");
+  const codeEl = document.getElementById("rcode");
+  const runBtn = document.getElementById("runBtn");
+  const clearBtn = document.getElementById("clearBtn");
 
-    const webR = new WebR();
-    await webR.init();
+  const webR = new WebR();
+  await webR.init();
 
-    statusEl.textContent = "webR loaded.";
-    runBtn.disabled = false;
-    runBtn.textContent = "Run R";
+  statusEl.textContent = "webR loaded.";
+  runBtn.disabled = false;
+  runBtn.textContent = "Run R";
 
-    async function runRCode() {
-      runBtn.disabled = true;
-      statusEl.textContent = "Running R code...";
-      outputEl.textContent = "";
+  async function runRCode() {
+    runBtn.disabled = true;
+    statusEl.textContent = "Running R code...";
+    outputEl.textContent = "";
 
-      const shelter = await new webR.Shelter();
-      try {
-        await webR.evalRVoid(`
-          capture.output({
-            tryCatch({
-              ${codeEl.value}
-            }, error = function(e) {
-              message("Error: ", conditionMessage(e))
-            })
-          }, file = stdout())
-        `);
-      } catch (err) {
-        outputEl.textContent += "\\nJavaScript error: " + err.message;
-      } finally {
-        shelter.purge();
-        statusEl.textContent = "Done.";
-        runBtn.disabled = false;
+    const shelter = await new webR.Shelter();
+
+    try {
+      const result = await shelter.captureR(codeEl.value);
+
+      if (result.output && result.output.length > 0) {
+        outputEl.textContent = result.output
+          .map(x => x.data)
+          .join("\n");
+      } else {
+        outputEl.textContent = "[No printed output returned]";
       }
+    } catch (err) {
+      outputEl.textContent = "Error: " + err.message;
+    } finally {
+      shelter.purge();
+      statusEl.textContent = "Done.";
+      runBtn.disabled = false;
     }
+  }
 
-    runBtn.addEventListener("click", runRCode);
+  runBtn.addEventListener("click", runRCode);
 
-    clearBtn.addEventListener("click", () => {
-      outputEl.textContent = "";
-    });
-
-    webR.stdout.subscribe(line => {
-      outputEl.textContent += line + "\\n";
-    });
-
-    webR.stderr.subscribe(line => {
-      outputEl.textContent += "[stderr] " + line + "\\n";
-    });
-  </script>
+  clearBtn.addEventListener("click", () => {
+    outputEl.textContent = "";
+  });
+</script>
+  
 </body>
 </html>
