@@ -1,75 +1,177 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>R online</title>
-<meta name="author" content="rbadgett@kumc.edu">
-<script src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
-<style>
-  body, h1, h2, h3, div {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-</style>
+  <meta charset="utf-8">
+  <title>R online</title>
+  <meta name="author" content="rbadgett@kumc.edu">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 2rem;
+      line-height: 1.45;
+      max-width: 1000px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 0.3rem;
+    }
+    textarea {
+      width: 100%;
+      min-height: 500px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 0.75rem;
+      box-sizing: border-box;
+      white-space: pre;
+    }
+    button {
+      margin-top: 0.8rem;
+      margin-right: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #status {
+      margin-top: 0.8rem;
+      font-weight: bold;
+    }
+    #output {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      background: #f8f8f8;
+      min-height: 180px;
+      white-space: pre-wrap;
+      font-family: Consolas, "Courier New", monospace;
+    }
+  </style>
 </head>
-<body onload="initAddedDCLightExercises();">
-<h1>Evidence-based Management in healthcare</h1>
-	<h2>R Online</h2>
-	<h3>Bayesian p-values</h3>
+<body>
+  <h1>Evidence-based Management in healthcare</h1>
+  <h2>R Online</h2>
+  <h3>Bayesian p-values</h3>
 
-<div data-datacamp-exercise data-lang="r">
-	<code data-type="pre-exercise-code">
-		# This will get executed each time the exercise gets initialized
-	</code>
-	<code data-type="sample-code">
+  <p>Edit the R code below and click <strong>Run R</strong>.</p>
+
+  <textarea id="rcode">
 # Goodman's example using standard p=0.05 with Prior prob of null hypothesis 0.5
-print('Example from Goodman. 2. Bayes Factor. Ann Intern Med 1999 PMID 10383350')
-PriorProb = 0.5
-writeLines(paste("Prior probabiity of null hypothesis: ", PriorProb))
-PriorOdds = PriorProb/(1-PriorProb)
+print("Example from Goodman. 2. Bayes Factor. Ann Intern Med 1999 PMID 10383350")
+PriorProb <- 0.5
+writeLines(paste("Prior probability of null hypothesis:", PriorProb))
+PriorOdds <- PriorProb / (1 - PriorProb)
 
-P_value   = 0.05 # Typical threshold for rejecting null hypothesis
-z <- qnorm(P_value/2, lower.tail = FALSE)
-MinimumBayesFactor<- round(exp(-z^2/2),2)
-writeLines(paste("Minimum Bayes Factor: ",MinimumBayesFactor))
+P_value <- 0.05   # Typical threshold for rejecting null hypothesis
+z <- qnorm(P_value / 2, lower.tail = FALSE)
+MinimumBayesFactor <- round(exp(-z^2 / 2), 2)
+writeLines(paste("Minimum Bayes Factor:", MinimumBayesFactor))
 
-PosteriorOdds = MinimumBayesFactor*PriorOdds
-PosteriorProb = round(PosteriorOdds/(1+PosteriorOdds),2) # So, a p=0.05 actually has a 13% chance of the null hypothesis being true
-writeLines(paste("Probability of null hypothesis given p value of ", P_value,': ',PosteriorProb,' or ',PosteriorProb*100,'%.'," Woah, that is a surprise.",sep=''))
-
+PosteriorOdds <- MinimumBayesFactor * PriorOdds
+PosteriorProb <- round(PosteriorOdds / (1 + PosteriorOdds), 2)
+writeLines(
+  paste(
+    "Probability of null hypothesis given p value of ",
+    P_value,
+    ": ",
+    PosteriorProb,
+    " or ",
+    PosteriorProb * 100,
+    "%.",
+    " Woah, that is a surprise.",
+    sep = ""
+  )
+)
 
 # DMSE QI example. For using Bayes in QI, see Gustafson et al. Health Serv Res. 2003 PMID: 12785571
-writeLines("\n\nExample of HbA1c reduction from Odgers-Jewell et al. Diabet Med. 2017  PMID: 28226200.\nFor using Bayes in QI, see Gustafson et al. Health Serv Res. 2003 PMID: 12785571")
-PriorProb = 0.0002 # From PMID 28226200
-writeLines(paste("Prior probabiity of null hypothesis: ", PriorProb))
-PriorOdds = PriorProb/(1-PriorProb)
+writeLines("\n\nExample of HbA1c reduction from Odgers-Jewell et al. Diabet Med. 2017 PMID: 28226200.\nFor using Bayes in QI, see Gustafson et al. Health Serv Res. 2003 PMID: 12785571")
+PriorProb <- 0.0002
+writeLines(paste("Prior probability of null hypothesis:", PriorProb))
+PriorOdds <- PriorProb / (1 - PriorProb)
 
-P_value   = 0.07 # Our p=value
-P_value   <- as.character(sprintf(P_value, fmt='%#.3f'))
-z <- qnorm(as.numeric(P_value)/2, lower.tail = FALSE)
-MinimumBayesFactor<- round(exp(-z^2/2),2)
-writeLines(paste("Minimum Bayes Factor: ",MinimumBayesFactor))
+P_value <- 0.07
+P_value_chr <- sprintf("%#.3f", P_value)
+z <- qnorm(as.numeric(P_value_chr) / 2, lower.tail = FALSE)
+MinimumBayesFactor <- round(exp(-z^2 / 2), 2)
+writeLines(paste("Minimum Bayes Factor:", MinimumBayesFactor))
 
-PosteriorOdds = MinimumBayesFactor*PriorOdds
-PosteriorProb <- as.character(sprintf(PosteriorOdds, fmt='%#.3f'))
-writeLines(paste("Probability of null hypothesis given p value of ", P_value,': ',PosteriorProb,' or ',as.numeric(PosteriorProb)*100,'%.',sep=''))
+PosteriorOdds <- MinimumBayesFactor * PriorOdds
+PosteriorProb_chr <- sprintf("%#.3f", PosteriorOdds)
+writeLines(
+  paste(
+    "Probability of null hypothesis given p value of ",
+    P_value_chr,
+    ": ",
+    PosteriorProb_chr,
+    " or ",
+    as.numeric(PosteriorProb_chr) * 100,
+    "%.",
+    sep = ""
+  )
+)
+  </textarea>
 
-	</code>
-<!--
-	<code data-type="solution">
-		# Create a variable a, equal to 5
-		a <- 5
+  <div>
+    <button id="runBtn" disabled>Loading R...</button>
+    <button id="clearBtn">Clear output</button>
+  </div>
 
-		# Print out a
-		print(a)
-	</code>
-	<code data-type="sct">
-		test_object("a")
-		test_function("print")
-		success_msg("Great job!")
-	</code>
-	<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
--->
-</div>
-<div>Press Ctrl+L to clear the console on the right.</div>
-<div>Code is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></div>
+  <div id="status">Initializing webR...</div>
+  <pre id="output"></pre>
+
+  <script type="module">
+    import { WebR } from "https://webr.r-wasm.org/latest/webr.mjs";
+
+    const statusEl = document.getElementById("status");
+    const outputEl = document.getElementById("output");
+    const codeEl = document.getElementById("rcode");
+    const runBtn = document.getElementById("runBtn");
+    const clearBtn = document.getElementById("clearBtn");
+
+    const webR = new WebR();
+    await webR.init();
+
+    statusEl.textContent = "webR loaded.";
+    runBtn.disabled = false;
+    runBtn.textContent = "Run R";
+
+    async function runRCode() {
+      runBtn.disabled = true;
+      statusEl.textContent = "Running R code...";
+      outputEl.textContent = "";
+
+      const shelter = await new webR.Shelter();
+      try {
+        await webR.evalRVoid(`
+          capture.output({
+            tryCatch({
+              ${codeEl.value}
+            }, error = function(e) {
+              message("Error: ", conditionMessage(e))
+            })
+          }, file = stdout())
+        `);
+      } catch (err) {
+        outputEl.textContent += "\\nJavaScript error: " + err.message;
+      } finally {
+        shelter.purge();
+        statusEl.textContent = "Done.";
+        runBtn.disabled = false;
+      }
+    }
+
+    runBtn.addEventListener("click", runRCode);
+
+    clearBtn.addEventListener("click", () => {
+      outputEl.textContent = "";
+    });
+
+    webR.stdout.subscribe(line => {
+      outputEl.textContent += line + "\\n";
+    });
+
+    webR.stderr.subscribe(line => {
+      outputEl.textContent += "[stderr] " + line + "\\n";
+    });
+  </script>
 </body>
 </html>
