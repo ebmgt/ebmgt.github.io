@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>R online</title>
+<meta name="author" content="rbadgett@kumc.edu">
+<script type="text/javascript" src="//cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body onload="initAddedDCLightExercises();">
+<h1></h1>
+	<h2>R Online</h2>
+	<h3>O'Kelly, 2026/h3>
+
+<div data-datacamp-exercise data-lang="r">
+	<code data-type="pre-exercise-code">
+		# This will get executed each time the exercise gets initialized
+	</code>
+	<code data-type="sample-code">
+# Per study of O'Kelly (cited below), comparing the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale to prediction job departure in healthcare"
+		
+# -----------------------------
+
+# Code GNU GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
+# Plain English details at https://www.gnu.org/licenses/quick-guide-gplv3.html
+# rbadgett@kumc.edu
+# 2026-08-18
+
+# Construct a 2x2 matrix using the probabilities from the text
+table_2x2 <- matrix(
+  c(0.335, 1 - 0.335,  # Row 1: Intended to leave (Departed, Stayed)
+    0.067, 1 - 0.067), # Row 2: Did not intend to leave (Departed, Stayed)
+  nrow = 2,
+  byrow = TRUE,
+  dimnames = list(
+    "Intention to Leave" = c("Yes", "No"),
+    "Actual Departure" = c("Departed", "Stayed")
+  )
+)
+
+# Display the table to the console
+# print(table_2x2)
+
+# Calculate the Odds Ratio (OR) directly from the table
+# OR = (odds of departure if intention = Yes) / (odds of departure if intention = No)
+odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
+  (table_2x2[2, "Departed"] / table_2x2[2, "Stayed"])
+
+table_ORs <- data.frame(
+  Predictor = c("Cynicism/depersonalization (Table 3)", 
+                "Intention to leave stated (results para 2)"),
+  Odds_Ratios = round(c(1.37, odds_ratio_intention), 2)
+)
+
+# Outputs to console -----
+cat(crayon::bold("2x2 Table (Proportions):\n"), 
+    paste(capture.output(print(table_2x2)), collapse = "\n"), "\n")
+
+cat(crayon::bold("Calculated Odds Ratios:\n"), 
+    paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
+  
+message("\nSummary: stated intention to leave is more predictive of departure than the MBI cynicism/depersonalization score. *However*, the stated intention to leave result is not adjusted for other cofactors.\n")
+
+	</code>
+	<div data-type="hint">Click 'Run'<code></code>.</div>
+-->
+</div>
+<div>Press Ctrl+L to clear the console on the right.</div>
+	<h3>Documentation</h3>
+<ul>
+	<li>Data is from:<br>
+O'Kelly AC, Hidrue MK, Berman AN, Curry WT, Del Carmen MG, Phair S, Lehrhoff S, Wasfy JH. Dimensions of Burnout and Predictors of Physician Turnover in Clinical Practice. J Gen Intern Med. 2026 Apr 14. Epub ahead of print. PMID: <a href="https://pubmed.gov/41979726">41979726</a>.</li>
+	<li>Structural code to create the workspace is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></li>
+	</ul>
+</body>
+</html>
