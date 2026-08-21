@@ -55,7 +55,7 @@ table_ORs <- data.frame(
   Odds_Ratios = round(c(1.37, odds_ratio_intention), 2))
 
 # Display results -----
-cat(crayon::bold("2x2 Table (Proportions):\n"), paste(capture.output(print(table_2x2)), collapse = "\n"), "\n")
+cat(crayon::bold("2x2 Table (percentages from Results, paragraph 2):\n"), paste(capture.output(print(table_2x2)), collapse = "\n"), "\n\n\n")
 cat(crayon::bold("Calculated Odds Ratios:\n"),  paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
   
 message(summary)
