@@ -31,20 +31,19 @@
 summary <- "\nSummary: stated intention to leave is more predictive of departure than the MBI cynicism/depersonalization score. *However*, the stated intention to leave result is not adjusted for other cofactors.\n"
 			
 	</code>
-	<code data-type="sample-code">
-# Per study of O'Kelly (cited below), this R script compares the prediction of job prediction job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale, the MBI emotional exhaustion scale and stated intention to leavee.
+	<code data-type="sample-code"
+# Per study of O'Kelly (1), this R script compares the prediction of job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale compared to stated intention to leave.
 
 # Calculate the OR for the Intention to leave question by creating a 2x2  table from the percentages in paragraph 2 of the results
-		table_2x2 <- matrix(
-  c(0.335, 1 - 0.335,  # Row 1: Intended to leave (Departed, Stayed)
-    0.067, 1 - 0.067), # Row 2: Did not intend to leave (Departed, Stayed)
-  nrow = 2,
-  byrow = TRUE,
-  dimnames = list(
+table_2x2 <- matrix(
+  c(
+    33.5, 66.5,   # Intended to leave: departed, stayed
+     6.7, 93.3    # Did not intend to leave: departed, stayed
+  ),
+  nrow = 2, byrow = TRUE, dimnames = list(
     "Intention to Leave" = c("Yes", "No"),
-    "Actual Departure" = c("Departed", "Stayed")
-  )
-)
+    "Actual Departure"   = c("Departed", "Stayed")
+  ))
 
 # OR = (odds of departure if intention = Yes) / (odds of departure if intention = No)
 odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
