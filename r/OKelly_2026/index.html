@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>R Online</h1>
-	<h2>Supplementary analysis to the prediction of job departure by O'Kelly, 2026<sup>1<</sup></h2>
+	<h2>Supplementary analysis to the prediction of job departure by O'Kelly, 2026<sup>1</sup></h2>
 	<!-- <h3>(Chrome browers with certain settings may not allow this script to run)</h3> -->
 
 <div data-datacamp-exercise
@@ -32,7 +32,7 @@ summary <- "\nSummary: stated intention to leave is more predictive of departure
 			
 	</code>
 	<code data-type="sample-code">
-# Per study of O'Kelly (1), this R script compares the prediction of job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale compared to stated intention to leave.
+# Per the study of O'Kelly (1), this R script compares the prediction of job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale compared to stated intention to leave.
 
 # Calculate the OR for the Intention to leave question by creating a 2x2  table from the percentages in paragraph 2 of the results
 table_2x2 <- matrix(
@@ -42,8 +42,7 @@ table_2x2 <- matrix(
   ),
   nrow = 2, byrow = TRUE, dimnames = list(
     "Intention to Leave" = c("Yes", "No"),
-    "Actual Departure"   = c("Departed", "Stayed")
-  ))
+    "Actual Departure"   = c("Departed", "Stayed")  ))
 
 # OR = (odds of departure if intention = Yes) / (odds of departure if intention = No)
 odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
@@ -53,20 +52,14 @@ odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) /
 table_ORs <- data.frame(
   Predictor = c("Cynicism/depersonalization (Table 3)", 
                 "Intention to leave stated (results para 2)"),
-  Odds_Ratios = round(c(1.37, odds_ratio_intention), 2)
-)
+  Odds_Ratios = round(c(1.37, odds_ratio_intention), 2))
 
 # Display results -----
-cat(crayon::bold("2x2 Table (Proportions):\n"), 
-    paste(capture.output(print(table_2x2)), collapse = "\n"), "\n")
-
-cat(crayon::bold("Calculated Odds Ratios:\n"), 
-    paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
+cat(crayon::bold("2x2 Table (Proportions):\n"), paste(capture.output(print(table_2x2)), collapse = "\n"), "\n")
+cat(crayon::bold("Calculated Odds Ratios:\n"),  paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
   
 message(summary)
-
-	</code>
-	<div data-type="hint">Click 'Run'<code></code>.</div>
+</code>
 -->
 </div>
 <div>Press Ctrl+L to clear the console on the right.</div>
