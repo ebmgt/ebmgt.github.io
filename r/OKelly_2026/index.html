@@ -14,11 +14,12 @@
         onclick="runDataCampCode()"
         style="
           display: inline-block;
-          background-color: #28a745;
-          border: 1px solid #28a745;
-          color: #fff;
-          padding: 6px 12px;
-          font-size: 14px;
+          background-color: rgb(3, 239, 98);
+          border: none;
+          color: rgb(5, 25, 45);
+          padding: 8px 14px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 16px;
           font-weight: 600;
           line-height: 1.4;
           border-radius: 4px;
@@ -76,7 +77,7 @@ table_ORs <- data.frame(
 
 # Display results -----
 cat(crayon::bold("2x2 Table (percentages from Results, paragraph 2):\n"), paste(capture.output(print(table_2x2)), collapse = "\n"), "\n\n\n")
-cat(crayon::bold("Calculated Odds Ratios:\n"),  paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
+cat(crayon::bold("Calculated Odds Ratios:\n"),  paste(capture.output(print(table_ORs, row.names = FALSE)), collapse = "\n"), "\n")
   
 message(summary)
 </code>
