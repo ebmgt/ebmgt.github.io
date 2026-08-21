@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>R Online</h1>
-	<h2>Supplementary analysis to the prediction of job departure by O'Kelly, 2026</h2>
+	<h2>Supplementary analysis to the prediction of job departure by O'Kelly, 2026<sup>1<</sup></h2>
 	<!-- <h3>(Chrome browers with certain settings may not allow this script to run)</h3> -->
 
 <div data-datacamp-exercise
@@ -15,19 +15,27 @@
      data-no-lazy-load>
 	<code data-type="pre-exercise-code">
 		# This will get executed each time the exercise gets initialized
+		table_2x2 <- matrix(
+  c(
+    33.5, 66.5,   # Intended to leave:       departed, stayed
+     6.7, 93.3    # Did not intend to leave: departed, stayed
+  ),
+  nrow = 2,
+  byrow = TRUE,
+  dimnames = list(
+    "Intention to Leave" = c("Yes", "No"),
+    "Actual Departure"   = c("Departed", "Stayed")
+  )
+)
+
+print(table_2x2)
+			
 	</code>
 	<code data-type="sample-code">
 # Per study of O'Kelly (cited below), this R script compares the prediction of job prediction job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale, the MBI emotional exhaustion scale and stated intention to leavee.
-		
-# -----------------------------
 
-# Code GNU GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
-# Plain English details at https://www.gnu.org/licenses/quick-guide-gplv3.html
-# rbadgett@kumc.edu
-# 2026-08-18
-
-# Construct a 2x2 matrix using the probabilities from the text
-table_2x2 <- matrix(
+# Calculate the OR for the Intention to leave question by creating a 2x2  table from the percentages in paragraph 2 of the results
+		table_2x2 <- matrix(
   c(0.335, 1 - 0.335,  # Row 1: Intended to leave (Departed, Stayed)
     0.067, 1 - 0.067), # Row 2: Did not intend to leave (Departed, Stayed)
   nrow = 2,
@@ -38,10 +46,6 @@ table_2x2 <- matrix(
   )
 )
 
-# Display the table to the console
-# print(table_2x2)
-
-# Calculate the Odds Ratio (OR) directly from the table
 # OR = (odds of departure if intention = Yes) / (odds of departure if intention = No)
 odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
   (table_2x2[2, "Departed"] / table_2x2[2, "Stayed"])
@@ -67,10 +71,10 @@ message("\nSummary: stated intention to leave is more predictive of departure th
 </div>
 <div>Press Ctrl+L to clear the console on the right.</div>
 	<h3>Documentation</h3>
-<ul>
+<ol>
 	<li>Data is from:<br>
 O'Kelly AC, Hidrue MK, Berman AN, Curry WT, Del Carmen MG, Phair S, Lehrhoff S, Wasfy JH. Dimensions of Burnout and Predictors of Physician Turnover in Clinical Practice. J Gen Intern Med. 2026 Apr 14. Epub ahead of print. PMID: <a href="https://pubmed.gov/41979726">41979726</a>.</li>
 	<li>Structural code to create the workspace is from <a href="https://github.com/datacamp/datacamp-light">https://github.com/datacamp/datacamp-light</a></li>
-	</ul>
+	</ol>
 </body>
 </html>
