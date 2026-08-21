@@ -10,8 +10,28 @@
 	<h2>Supplementary analysis to the prediction of job departure by O'Kelly, 2026<sup>1</sup></h2>
 	<!-- <h3>(Chrome browers with certain settings may not allow this script to run)</h3> -->
 
-<div data-datacamp-exercise
+<button type="button"
+        onclick="runDataCampCode()"
+        style="
+          display: inline-block;
+          background-color: #28a745;
+          border: 1px solid #28a745;
+          color: #fff;
+          padding: 6px 12px;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.4;
+          border-radius: 4px;
+          margin-bottom: 8px;
+          cursor: pointer;
+        ">
+  Run the code below
+</button>
+
+<div id="r-exercise"
+     data-datacamp-exercise
      data-lang="r"
+     data-show-run-button
      data-no-lazy-load>
 	<code data-type="pre-exercise-code">
 		# This will get executed each time the exercise gets initialized
@@ -62,6 +82,20 @@ message(summary)
 </code>
 -->
 </div>
+
+<script>
+function runDataCampCode() {
+  const exercise = document.getElementById("r-exercise");
+
+  const runButton = Array.from(exercise.querySelectorAll("button"))
+    .find(button => button.textContent.trim() === "Run");
+
+  if (runButton) {
+    runButton.click();
+  }
+}
+</script>	
+	
 <div>Press Ctrl+L to clear the console on the right.</div>
 	<h3>Documentation</h3>
 <ol>
