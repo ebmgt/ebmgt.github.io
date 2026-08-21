@@ -28,7 +28,7 @@
   )
 )
 
-print(table_2x2)
+summary <- "\nSummary: stated intention to leave is more predictive of departure than the MBI cynicism/depersonalization score. *However*, the stated intention to leave result is not adjusted for other cofactors.\n"
 			
 	</code>
 	<code data-type="sample-code">
@@ -50,20 +50,21 @@ print(table_2x2)
 odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
   (table_2x2[2, "Departed"] / table_2x2[2, "Stayed"])
 
+# Create summary table comparing the odds ratios for MBI:cynicism vs intention to leave
 table_ORs <- data.frame(
   Predictor = c("Cynicism/depersonalization (Table 3)", 
                 "Intention to leave stated (results para 2)"),
   Odds_Ratios = round(c(1.37, odds_ratio_intention), 2)
 )
 
-# Outputs to console -----
+# Display results -----
 cat(crayon::bold("2x2 Table (Proportions):\n"), 
     paste(capture.output(print(table_2x2)), collapse = "\n"), "\n")
 
 cat(crayon::bold("Calculated Odds Ratios:\n"), 
     paste(capture.output(print(table_ORs)), collapse = "\n"), "\n")
   
-message("\nSummary: stated intention to leave is more predictive of departure than the MBI cynicism/depersonalization score. *However*, the stated intention to leave result is not adjusted for other cofactors.\n")
+message(summary)
 
 	</code>
 	<div data-type="hint">Click 'Run'<code></code>.</div>
