@@ -77,17 +77,17 @@ table_ORs <- data.frame(
 
 cat(
   crayon::bold(
-    "1) Intention to leave: 2x2 Table and odds ratio (percentages from Results, paragraph 2):\n"),
+    "1) INTENTION TO LEAVE: 2x2 Table and odds ratio (percentages from Results, paragraph 2):\n"),
   paste(
     capture.output(print(table_2x2)), collapse = "\n"
   ),
   "\nOdds ratio of intention to leave: ",
   round(odds_ratio_intention, 2),
   "\n\n",
-  crayon::bold("2) Odds ratios comparison:\n"),
+  crayon::bold("2) ODDS RATIOS COMPARISON:\n"),
   paste(
     c(
-      sprintf("%-48s %12s", "Predictor", "Odds_Ratio"),
+      sprintf("%-48s %12s", "Predictor", "Odds Ratio"),
       sprintf(
         "%-48s %12.2f",
         table_ORs$Predictor,
