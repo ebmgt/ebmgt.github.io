@@ -55,7 +55,7 @@ summary <- "\nSummary: stated intention to leave is more predictive of departure
 	<code data-type="sample-code">
 # Per the study of O'Kelly (1), this R script compares the prediction of job departure in healthcare by the Maslach Burnout Inventory (MBI) cynicism/depersonalization scale compared to stated intention to leave.
 
-# Calculate the OR for the Intention to leave question by creating a 2x2  table from the percentages in paragraph 2 of the results
+# 1) Calculate the OR for the Intention to leave question by creating a 2x2  table from the percentages in paragraph 2 of the results
 table_2x2 <- matrix(
   c(
     33.5, 66.5,   # Intended to leave: departed, stayed
@@ -69,15 +69,31 @@ table_2x2 <- matrix(
 odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) / 
   (table_2x2[2, "Departed"] / table_2x2[2, "Stayed"])
 
-# Create summary table comparing the odds ratios for MBI:cynicism vs intention to leave
+# 2) Create summary table comparing the odds ratios for MBI:cynicism vs intention to leave
 table_ORs <- data.frame(
   Predictor = c("Cynicism/depersonalization (Table 3)", 
                 "Intention to leave stated (results para 2)"),
   Odds_Ratios = round(c(1.37, odds_ratio_intention), 2))
 
-# Display results -----
-cat(crayon::bold("2x2 Table (percentages from Results, paragraph 2):\n"), paste(capture.output(print(table_2x2)), collapse = "\n"), "\n\n\n\n\n")
-cat(crayon::bold("Calculated Odds Ratios:\n"),  paste(capture.output(print(table_ORs, row.names = FALSE)), collapse = "\n"), "\n")
+cat(
+  crayon::bold(
+    "1) Intention to leave: 2x2 Table and odds ratio (percentages from Results, paragraph 2):\n"),
+  paste(
+    capture.output(print(table_2x2)), collapse = "\n"
+  ),
+  "\nOdds ratio of intention to leave: ",
+  round(odds_ratio_intention, 2),
+  "\n\n",
+  crayon::bold("2) Odds ratios comparison:\n"),
+  paste(
+    c(
+      sprintf("%-48s %12s", "Predictor", "Odds_Ratio"),
+      sprintf(
+        "%-48s %12.2f",
+        table_ORs$Predictor,
+        table_ORs$Odds_Ratios
+      )), collapse = "\n"
+  ),"\n")
   
 message(summary)
 </code>
