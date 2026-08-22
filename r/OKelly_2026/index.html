@@ -71,17 +71,17 @@ odds_ratio_intention <- (table_2x2[1, "Departed"] / table_2x2[1, "Stayed"]) /
 
 # 2) Create summary table comparing the odds ratios for MBI:cynicism vs intention to leave
 table_ORs <- data.frame(
-  Predictor = c("Cynicism/depersonalization (Table 3)", 
-                "Intention to leave stated (results para 2)"),
+  Predictor = c("Cynicism/depersonalization (O'Kelly. Table 3)", 
+                "Intention to leave stated (O'Kelly, results para 2)"),
   Odds_Ratios = round(c(1.37, odds_ratio_intention), 2))
 
 cat(
   crayon::bold(
-    "\n\n1) INTENTION TO LEAVE: 2x2 Table and odds ratio (percentages from Results, paragraph 2):\n"),
+    "\n\n1) INTENTION TO LEAVE: 2x2 Table and odds ratio (percentages from O'Kelly Results, paragraph 2):\n"),
   paste(
     capture.output(print(table_2x2)), collapse = "\n"
   ),
-  "\nOdds ratio of intention to leave: ",
+  "\nOdds ratio for intention to leave: ",
   round(odds_ratio_intention, 2),
   "\n\n",
   crayon::bold("2) ODDS RATIOS COMPARISON:\n"),
